@@ -1,0 +1,807 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Living in the Heights</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..800,0..100;1,9..144,400..700,0..100&amp;family=Caveat:wght@500..700&amp;family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&amp;display=swap">
+<style>
+body{margin:0;background:#FBF4EA}
+a{color:#A51F26}a:hover{color:#7E141A}
+.ed *{box-sizing:border-box}
+.ed .wrap{max-width:1240px;margin:0 auto;padding-inline:40px}
+.ed .nav a{color:#3A1A17;text-decoration:none}
+.ed .nav a:hover{color:#A51F26}
+.ed .pill{display:inline-flex;align-items:center;gap:10px;background:#174BFF;color:#fff;text-decoration:none;border-radius:999px;padding:16px 26px;font:700 13px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase}
+.ed .pill:hover{background:#0D36D1;color:#fff}
+.ed .more{display:inline-flex;align-items:center;gap:8px;color:#A51F26;text-decoration:none;font:700 12px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase}
+.ed .story a{color:#3A1A17;text-decoration:none}
+.ed .story a:hover{color:#A51F26}
+.ed .wk{transition:transform .2s ease}.ed .wk:hover{transform:translateY(-4px)}@media (prefers-reduced-motion:reduce){.ed .wk{transition:none}}
+.ed .cal-row:hover span span:nth-child(2){text-decoration:underline;text-underline-offset:4px}
+.ed .cal-feat{transition:transform .2s ease}.ed .cal-feat:hover{transform:translateY(-3px)}
+.ed .home-card:hover span{text-decoration:underline;text-underline-offset:4px}
+.ed .lift{transition:transform .2s ease}.ed .lift:hover{transform:translateY(-3px)}
+.ed .news-row:hover span:nth-child(2),.ed .guide-row:hover span span:nth-child(2),.ed .news-lead:hover span:nth-of-type(2){text-decoration:underline;text-underline-offset:4px}
+.ed .chip-link:hover{border-color:#A51F26 !important}
+@media (prefers-reduced-motion:reduce){.ed .lift{transition:none}}
+.ed .hood a{color:#A51F26;text-decoration:none}
+.ed .hood a:hover{background:#FFBEA1}
+.ed .menu-btn{display:grid !important}
+@media (max-width:1100px){
+.ed .nav{display:none !important}
+.ed .menu-btn{display:grid !important}
+}
+@media (max-width:980px){
+.ed .sch-grid{grid-template-columns:1fr !important}
+.ed .grid3b{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+.ed .news-grid,.ed .music-grid,.ed .two-col{grid-template-columns:1fr !important}
+.ed .grid4{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+.ed .grid3{grid-template-columns:1fr !important}
+.ed .music-grid > div:first-child{position:static !important}
+.ed .homes4{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+.ed .calx{grid-template-columns:1fr !important}
+.ed .hslide{grid-template-columns:1fr !important}
+.ed .hslide > div[role=img]{min-height:260px !important}
+.ed .hfacts{grid-template-columns:1fr !important}
+.ed .hslide > div:last-child{padding:28px 22px !important}
+.ed .dyk{grid-template-columns:1fr !important;justify-items:center;text-align:center;padding:40px 24px 28px !important}
+.ed .cal{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+.ed .signrow{grid-template-columns:1fr !important}
+.ed .around{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+.ed .hero,.ed .feat,.ed .stories,.ed .foot-cols{grid-template-columns:1fr !important}
+.ed .week{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+.ed .hood-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+}
+@media (max-width:640px){
+.ed .hero-photo{left:0 !important;width:100% !important;top:auto !important;height:230px !important}
+.ed .hero-fade{display:none}
+.ed .hero-inner{padding-bottom:250px !important;padding-top:28px !important}
+.ed .grid4 > a [role=img],.ed .around [role=img]{aspect-ratio:16/9 !important}
+.ed .lm{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:28px 16px !important}
+.ed .lm [role=img]{width:110px !important;height:82px !important}
+.ed .homes4{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:20px 14px !important}
+.ed .homes4 span[style*="font-size: 24px"]{font-size:18px !important}
+.ed .dyk{padding:40px 20px 24px !important}
+.ed h2{overflow-wrap:anywhere}
+
+.ed .sch-cols,.ed .grid3b{grid-template-columns:1fr !important}
+.ed .grid4,.ed .music-list{grid-template-columns:1fr !important}
+.ed .sprig{display:none}
+.ed .homes4{grid-template-columns:1fr !important}
+.ed .cal-row{grid-template-columns:52px 84px minmax(0,1fr) !important;gap:14px !important}
+.ed .cal-row > span[role=img]{width:84px !important}
+.ed .facts{grid-template-columns:1fr 1fr 1fr !important}
+.ed .dyk{grid-template-columns:1fr !important;justify-items:center;text-align:center;padding:40px 24px 28px !important}
+.ed .cal{grid-template-columns:1fr !important}
+.ed .gallery{aspect-ratio:auto !important;grid-template-columns:1fr 1fr !important;grid-template-rows:220px 120px !important}
+.ed .gallery > div:first-child{grid-row:auto !important;grid-column:1 / 3}
+.ed .herologo{height:96px !important;max-width:calc(100% - 60px) !important}
+.ed .signup input{flex:none !important}
+.ed .around{grid-template-columns:1fr !important}
+.ed .wrap{padding-inline:20px}
+.ed .nav{display:none !important}
+.ed .hood-grid{grid-template-columns:1fr !important}
+.ed .signup{flex-direction:column;align-items:stretch !important}
+}
+</style>
+
+<style id="food-uplevel">
+.ft-tick{transition:transform .2s ease}.ft-tick:hover{transform:translateY(-3px)}
+.ft-feat{transition:transform .2s ease}.ft-feat:hover{transform:translateY(-4px)}
+.ft-cuis{transition:border-color .2s ease}.ft-cuis:hover{border-color:#A51F26!important}.ft-row::-webkit-scrollbar{display:none}
+@media (max-width:980px){.ft-grid{grid-template-columns:1fr!important}.ft-feat{min-height:0!important}}
+@media (max-width:640px){.ft-head{grid-template-columns:1fr!important}.ft-note{display:none}.ft-tick{grid-template-columns:96px minmax(0,1fr)!important}.ft-tick>div:first-child{width:96px!important}}
+@media (prefers-reduced-motion:reduce){.ft-tick,.ft-feat,.ft-cuis{transition:none}}
+</style><style>
+#schools .ff{background:#FFF8EE;border-radius:40px;padding:clamp(24px,4vw,56px)!important;box-shadow:0 30px 60px -40px rgba(110,40,25,.35)}
+#schools .ff>div{justify-content:center}
+#schools .ff-n{transition:background .25s,color .25s,opacity .25s,transform .25s,box-shadow .25s!important}
+#schools .ff-n{color:#13296F}#schools .ff-hs{color:#FFF8EE!important}#schools .ff-es.is-on,#schools .ff-ms.is-on,#schools .ff-n.is-on{background:#2456D6!important;color:#FFF8EE!important;border-color:transparent!important}#schools .ff-es.is-on-c,#schools .ff-ms.is-on-c,#schools .ff-n.is-on-c{background:#E16F4F!important;color:#FFF8EE!important;border-color:transparent!important}#schools .ff-n:hover{transform:translateX(4px);box-shadow:0 10px 24px -12px rgba(19,41,111,.35)}
+#schools .ff-es{font-size:16px!important;padding:12px 18px!important;border-radius:999px!important;background:#FFFFFF!important}
+#schools .ff-ms{font-size:clamp(22px,2.2vw,30px)!important;padding:22px 26px!important;border-radius:28px!important;border-width:2px!important;background:#FFFFFF!important}
+#schools .ff-ms[data-id="hogg"]{border-color:#2456D6!important;color:#2456D6}
+#schools .ff-ms[data-id="hamilton"]{border-color:#E16F4F!important;color:#C2492F}
+#schools .ff-hs{font-size:clamp(24px,2.4vw,34px)!important;padding:26px 28px!important;border-radius:28px!important;border:none!important}
+#schools .ff-hs[data-id="waltrip"]{background:#2456D6!important}
+#schools .ff-hs span:not(.ff-name):not(.ff-logo){font-size:12px!important;margin-top:4px}
+</style><style>
+#schools .ff{gap:clamp(48px,6vw,80px)!important;justify-items:center}
+#schools .ff-icon{position:relative;z-index:2;height:clamp(70px,7vw,96px);width:auto;margin:-8px auto -24px;display:block;mix-blend-mode:multiply}
+#schools .ff>div{flex-direction:row!important;flex-wrap:wrap;justify-content:center!important;align-items:flex-start;gap:12px!important;width:100%;position:relative}
+#schools .ff>div>span:first-child{flex-basis:100%;text-align:center;margin:0 0 6px!important}
+#schools .ff-n{width:auto!important;flex-direction:column!important;align-items:center!important;text-align:center!important;gap:8px!important}
+#schools .ff-es{border-radius:22px!important;padding:12px 14px!important;min-width:104px}
+#schools .ff-ms{min-width:200px}
+#schools .ff-hs{min-width:240px}
+#schools .ff-logo{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#E3EAF7;border:2px solid #FFFFFF;box-shadow:0 0 0 1.5px rgba(36,86,214,.25);font:700 13px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.06em;color:#2456D6}
+#schools .ff-ms .ff-logo{width:60px;height:60px;font-size:16px}
+#schools .ff-hs .ff-logo{width:76px;height:76px;font-size:20px;background:#FFF8EE;color:#A51F26;box-shadow:none}
+#schools .ff-n.is-on .ff-logo,#schools .ff-n.is-on-c .ff-logo{background:#FFF8EE}
+#schools .ff-n:hover{transform:translateY(-3px)!important}
+@media (max-width:700px){#schools .ff-es{min-width:0;padding:10px!important}#schools .ff-es .ff-logo{width:34px;height:34px;font-size:11px}#schools .ff-ms,#schools .ff-hs{min-width:0;flex:1}}
+</style><style>#schools .ff-hs .ff-logo{width:120px!important;height:120px!important;font-size:30px!important;border-width:4px!important}#schools .ff-hs{min-width:280px!important;padding:30px 32px!important;gap:14px!important}#schools .ff-ms .ff-logo{width:80px!important;height:80px!important;font-size:20px!important}#schools .ff-es .ff-logo{width:56px!important;height:56px!important;font-size:15px!important}</style><style>#schools .ff>div>span:first-child{display:inline-flex!important;flex-basis:auto!important;width:100%;justify-content:center;align-items:center;gap:12px;font:800 clamp(18px,1.8vw,24px)/1 'Playfair Display',Georgia,serif!important;letter-spacing:-.01em!important;text-transform:none!important;color:#13296F!important;margin-bottom:10px!important}#schools .ff>div>span:first-child:before,#schools .ff>div>span:first-child:after{content:"";flex:1;max-width:120px;height:1px;background:#EAD3C6}#schools .ff-hs-wrap{position:relative;z-index:2}</style><style>
+#schools .ff-hs .ff-name{font-size:clamp(24px,2.4vw,34px)!important;font-weight:800}
+#schools .ff-ms .ff-name{font-size:clamp(22px,2.2vw,30px)!important;font-weight:800}
+#schools .ff>div:has(.ff-es){flex-wrap:nowrap!important;gap:8px!important}
+#schools .ff-es{min-width:0!important;flex:1 1 0;padding:10px 6px!important;font-size:14px!important}
+#schools .ff-es .ff-logo{width:44px!important;height:44px!important;font-size:12px!important}
+#schools .ff>div>span:first-child{position:relative;z-index:2;background:transparent}
+#schools .ff>div>span:first-child{padding:6px 0}
+#schools .ff>div>span:first-child>*{background:#FFF8EE}
+@media (max-width:700px){#schools .ff>div:has(.ff-es){flex-wrap:wrap!important}#schools .ff-es{flex:0 0 calc(25% - 8px)}}
+</style><style>
+#schools .ff>div:has(.ff-es){display:grid!important;grid-template-columns:repeat(8,minmax(0,1fr))!important;gap:8px!important}
+#schools .ff>div:has(.ff-es)>span:first-child{grid-column:1/-1}
+#schools .ff-es{width:100%!important;flex:none!important}
+@media (max-width:700px){#schools .ff>div:has(.ff-es){grid-template-columns:repeat(4,minmax(0,1fr))!important}}
+</style></head>
+<body>
+<div style="background:#d42a2a;color:#fff8ee;padding:7px 0;position:relative;z-index:60"><nav aria-label="Switch site" style="max-width:1360px;margin:0 auto;padding:0 clamp(20px,5vw,56px);box-sizing:border-box;display:flex;justify-content:flex-end"><div style="display:flex;gap:4px;padding:3px;border-radius:999px;background:rgba(255,248,238,.16);font:600 12px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase"><a href="index.html" aria-current="page" style="display:flex;align-items:center;padding:7px 18px;border-radius:999px;text-decoration:none;color:#d42a2a;background:#fff8ee;white-space:nowrap">Living in the Heights</a><a href="../Draper Real Estate.dc.html" style="display:flex;align-items:center;padding:7px 18px;border-radius:999px;text-decoration:none;color:#fff8ee;white-space:nowrap;font-weight:500">Homes in the Heights</a></div></nav></div>
+<div id="dc-root"></div>
+<script type="text/x-template" id="dc-tpl">
+
+<div class="ed" style="position: relative; background: #FBF4EA; color: #3A1A17; font-family: Lora, Georgia, serif; min-width: 0">
+
+<header style="position: absolute; top: 0; left: 0; right: 0; z-index: 5">
+<div class="wrap" style="display: flex; align-items: center; justify-content: flex-end; gap: 24px; padding-top: 24px; padding-bottom: 24px; flex-wrap: wrap">
+<nav class="nav" aria-label="Main" style="display: flex; align-items: center; gap: 26px; font: 600 13px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .16em; text-transform: uppercase">
+<a href="neighborhoods.html">Neighborhoods</a>
+<a href="../Draper Real Estate.dc.html">Homes</a>
+<a href="events.html">Events</a>
+<a href="schools.html">Schools</a>
+<a href="guides.html">Guides</a>
+<button type="button" aria-label="Search" style="width: 44px; height: 44px; border-radius: 999px; border: 1.5px solid #A51F26; background: transparent; color: #A51F26; display: grid; place-items: center; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg></button>
+</nav>
+<button type="button" class="menu-btn" aria-label="{{ menuLabel }}" aria-expanded="{{ menuOpen }}" onClick="{{ toggleMenu }}" style="display: none; width: 48px; height: 48px; border-radius: 999px; border: 1.5px solid #A51F26; background: #FFFFFF; color: #A51F26; place-items: center; cursor: pointer"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+</div>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+<div class="menu-panel" style="position: fixed; inset: 0; z-index: 50; background: #FBF4EA; display: flex; flex-direction: column; padding: max(20px, env(safe-area-inset-top, 0px)) max(20px, env(safe-area-inset-right, 0px)) 32px max(20px, env(safe-area-inset-left, 0px)); overflow-y: auto">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<img src="assets/inline/x1.webp" alt="Living in the Heights" style="height: 64px; width: auto">
+<button type="button" aria-label="Close menu" onClick="{{ closeMenu }}" style="width: 48px; height: 48px; border-radius: 999px; border: 1.5px solid #A51F26; background: #FFFFFF; color: #A51F26; display: grid; place-items: center; cursor: pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+</div>
+<nav aria-label="Mobile" class="menu-links" style="display: flex; flex-direction: column; margin-top: 28px; border-top: 1px solid #EAD3C6">
+<a href="neighborhoods.html" style="display: flex; justify-content: space-between; align-items: center; padding: 18px 4px; border-bottom: 1px solid #EAD3C6; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 26px; color: #A51F26; text-decoration: none">Neighborhoods <span aria-hidden="true" style="font: 700 18px/1 'DM Sans', system-ui, sans-serif">→</span></a>
+<a href="events.html" style="display: flex; justify-content: space-between; align-items: center; padding: 18px 4px; border-bottom: 1px solid #EAD3C6; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 26px; color: #A51F26; text-decoration: none">Events <span aria-hidden="true" style="font: 700 18px/1 'DM Sans', system-ui, sans-serif">→</span></a>
+<a href="../Draper Real Estate.dc.html" style="display: flex; justify-content: space-between; align-items: center; padding: 18px 4px; border-bottom: 1px solid #EAD3C6; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 26px; color: #A51F26; text-decoration: none">Homes <span aria-hidden="true" style="font: 700 18px/1 'DM Sans', system-ui, sans-serif">→</span></a>
+<a href="food.html" style="display: flex; justify-content: space-between; align-items: center; padding: 18px 4px; border-bottom: 1px solid #EAD3C6; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 26px; color: #A51F26; text-decoration: none">Food &amp; Drink <span aria-hidden="true" style="font: 700 18px/1 'DM Sans', system-ui, sans-serif">→</span></a>
+<a href="music.html" style="display: flex; justify-content: space-between; align-items: center; padding: 18px 4px; border-bottom: 1px solid #EAD3C6; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 26px; color: #A51F26; text-decoration: none">Music <span aria-hidden="true" style="font: 700 18px/1 'DM Sans', system-ui, sans-serif">→</span></a>
+<a href="schools.html" style="display: flex; justify-content: space-between; align-items: center; padding: 18px 4px; border-bottom: 1px solid #EAD3C6; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 26px; color: #A51F26; text-decoration: none">Schools <span aria-hidden="true" style="font: 700 18px/1 'DM Sans', system-ui, sans-serif">→</span></a>
+<a href="guides.html" style="display: flex; justify-content: space-between; align-items: center; padding: 18px 4px; border-bottom: 1px solid #EAD3C6; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 26px; color: #A51F26; text-decoration: none">Guides <span aria-hidden="true" style="font: 700 18px/1 'DM Sans', system-ui, sans-serif">→</span></a>
+<a href="news.html" style="display: flex; justify-content: space-between; align-items: center; padding: 18px 4px; border-bottom: 1px solid #EAD3C6; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 26px; color: #A51F26; text-decoration: none">News <span aria-hidden="true" style="font: 700 18px/1 'DM Sans', system-ui, sans-serif">→</span></a>
+</nav>
+</div>
+</sc-if>
+</header>
+
+<section id="top" style="position: relative; overflow: hidden; background: #FFF1E6">
+<img class="hero-photo" src="assets/photos/heights-theater.jpg" alt="The Heights Theater sign on 19th Street" style="position: absolute; top: 0; right: 0; bottom: 0; left: 30%; width: 70%; height: 100%; object-fit: cover; object-position: 30% 35%">
+<div class="hero-fade" aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(90deg, #FFF1E6 0%, #FFF1E6 32%, rgba(255,241,230,.82) 46%, rgba(255,241,230,0) 68%)"></div>
+<div aria-hidden="true" style="position: absolute; inset: 0 0 auto 0; height: 150px; background: linear-gradient(180deg, rgba(255,241,230,.85) 0%, rgba(255,241,230,0) 100%)"></div>
+<div aria-hidden="true" style="position: absolute; inset: auto 0 0 0; height: 110px; background: linear-gradient(0deg, #FBF4EA 0%, rgba(251,244,234,.85) 35%, rgba(251,244,234,0) 100%)"></div>
+<div class="wrap hero-inner" style="position: relative; display: flex; flex-direction: column; gap: 26px; padding-top: 40px; padding-bottom: 96px; max-width: 1240px">
+<div style="display: flex; flex-direction: column; gap: 20px; max-width: 440px">
+<h1 style="margin: 0; line-height: 0"><img class="herologo" src="assets/inline/x1.webp" alt="Living in the Heights" style="height: clamp(130px, 14vw, 200px); width: auto; max-width: 100%; display: block; margin-left: -6px"></h1>
+<p style="margin: 0; font-family: Lora, Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(18px, 1.6vw, 22px); line-height: 1.35; color: #5A2A24; max-width: 26ch">Front porches, shady streets and a main street minutes from downtown.</p>
+<div><a class="pill" href="#guides">Explore the Heights <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div>
+</div>
+</div>
+</section>
+
+<section id="guides" class="wrap" aria-label="Community guides" style="padding-top: 0; padding-bottom: 64px; display: flex; flex-direction: column; gap: 20px; margin-top: -48px; position: relative">
+<div class="week" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px">
+<a class="wk" href="neighborhoods.html" style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; text-decoration: none; padding: 12px 20px 8px; border-radius: 24px; background: transparent; color: #A51F26">
+<img src="assets/inline/x14.webp" alt="" style="height: 60px; width: auto; max-width: 104px; object-fit: contain; display: block">
+<span style="font: 700 15px/1.2 'DM Sans', system-ui, sans-serif; letter-spacing: .16em; text-transform: uppercase; color: #A51F26">Neighborhoods</span>
+</a>
+<a class="wk" href="schools.html" style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; text-decoration: none; padding: 12px 20px 8px; border-radius: 24px; background: transparent; color: #A51F26">
+<img src="assets/inline/x15.webp" alt="" style="height: 60px; width: auto; max-width: 104px; object-fit: contain; display: block">
+<span style="font: 700 15px/1.2 'DM Sans', system-ui, sans-serif; letter-spacing: .16em; text-transform: uppercase; color: #A51F26">Schools</span>
+</a>
+<a class="wk" href="guides.html" style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; text-decoration: none; padding: 12px 20px 8px; border-radius: 24px; background: transparent; color: #A51F26">
+<img src="assets/inline/x16.webp" alt="" style="height: 60px; width: auto; max-width: 104px; object-fit: contain; display: block">
+<span style="font: 700 15px/1.2 'DM Sans', system-ui, sans-serif; letter-spacing: .16em; text-transform: uppercase; color: #A51F26">New in Town</span>
+</a>
+<a class="wk" href="guides.html" style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; text-decoration: none; padding: 12px 20px 8px; border-radius: 24px; background: transparent; color: #A51F26">
+<img src="assets/inline/x17.webp" alt="" style="height: 60px; width: auto; max-width: 104px; object-fit: contain; display: block">
+<span style="font: 700 15px/1.2 'DM Sans', system-ui, sans-serif; letter-spacing: .16em; text-transform: uppercase; color: #A51F26">Guides</span>
+</a>
+</div>
+</section>
+
+<section id="featured" style="position: relative; overflow: hidden; background: #FFFFFF; border-top: 3px solid #FFBEA1; border-bottom: 3px solid #FFBEA1">
+<img src="assets/bluebonnet-trail.webp" alt="" aria-hidden="true" style="position: absolute; right: 0; bottom: 0; width: min(560px, 60%); height: auto; pointer-events: none; z-index: 0">
+<div class="wrap" style="position: relative; z-index: 1; padding-bottom: 220px !important; padding-top: 96px; padding-bottom: 96px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; align-items: center; gap: 20px">
+<span aria-hidden="true" style="width: 40px; height: 2px; background: #A51F26"></span>
+
+<span aria-hidden="true" style="flex: 1; height: 1px; background: #E8DFD7"></span>
+</div>
+<div class="feat" style="display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 64px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 18px; min-width: 0">
+<img src="assets/inline/x9.webp" alt="Norhill" style="height: 84px; width: auto; max-width: 100%; align-self: flex-start; margin-left: -6px">
+<div class="gallery" style="display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); grid-template-rows: 1fr 1fr; gap: 10px; aspect-ratio: 3 / 2; max-width: 100%; box-shadow: 0 40px 80px -48px rgba(43,23,18,.45)">
+<img src="https://media-www.houstonproperties.com/articles/2022/08/15/heights2_cXxAZlq.jpeg" alt="Home photo · front porch" loading="lazy" referrerpolicy="no-referrer" style="grid-row: 1 / 3; background: #F6F2EE; border: 1px solid #E8DFD7; border-radius: 18px;            min-width: 0;width:100%;height:100%;object-fit:cover;display:block">
+<div role="img" aria-label="Photo placeholder: Living room" style="background: #F6F2EE; border: 1px solid #E8DFD7; border-radius: 18px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: #6B5A52; font: 600 11px/1.3 'DM Sans', system-ui, sans-serif; letter-spacing: .18em; text-transform: uppercase; text-align: center; padding: 12px; min-width: 0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg><span>Living room</span></div>
+<div role="img" aria-label="Photo placeholder: Kitchen" style="background: #F6F2EE; border: 1px solid #E8DFD7; border-radius: 18px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: #6B5A52; font: 600 11px/1.3 'DM Sans', system-ui, sans-serif; letter-spacing: .18em; text-transform: uppercase; text-align: center; padding: 12px; min-width: 0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg><span>Kitchen</span></div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 22px; min-width: 0">
+<h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: clamp(28px, 2.8vw, 38px); line-height: 1.08; letter-spacing: -.01em; color: #2B1712; text-wrap: balance">A restored bungalow with a deep front porch</h2>
+<p style="margin: 0; font-family: Lora, Georgia, serif; font-style: italic; font-weight: 400; font-size: 17px; line-height: 1.5; color: #4A3A33">Original floors, a big backyard and a short walk to the trail.</p>
+<div class="facts" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid #E8DFD7; border-bottom: 1px solid #E8DFD7">
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 16px 0; min-width: 0"><span style="font: 600 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .2em; text-transform: uppercase; color: #C2492F">Bedrooms</span><span style="font-family: Lora, Georgia, serif; font-weight: 600; font-size: 17px; color: #2B1712">[BEDS]</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 16px 0; min-width: 0"><span style="font: 600 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .2em; text-transform: uppercase; color: #C2492F">Baths</span><span style="font-family: Lora, Georgia, serif; font-weight: 600; font-size: 17px; color: #2B1712">[BATHS]</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 16px 0; min-width: 0"><span style="font: 600 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .2em; text-transform: uppercase; color: #C2492F">Price</span><span style="font-family: Lora, Georgia, serif; font-weight: 600; font-size: 17px; color: #2B1712">[PRICE]</span></div>
+</div>
+<div><a href="homes.html" style="display: inline-flex; align-items: center; gap: 12px; background: #2B1712; color: #FFFFFF; text-decoration: none; border-radius: 999px; padding: 16px 26px; font: 700 13px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase">View the home <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 28px; padding-top: 24px; border-top: 1px solid #E8DFD7">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+<h3 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: clamp(24px, 2.4vw, 30px); line-height: 1; color: #2B1712">More homes for sale</h3>
+<a href="homes.html" style="display: inline-flex; align-items: center; gap: 8px; color: #2B1712; text-decoration: none; font: 700 12px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .16em; text-transform: uppercase">All listings <span aria-hidden="true">→</span></a>
+</div>
+<div class="homes4" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px">
+<a href="homes.html" class="home-card" style="display: flex; flex-direction: column; gap: 14px; text-decoration: none; color: #2B1712; min-width: 0; background: #FFFFFF; border-radius: 28px; padding: 12px 12px 22px; box-shadow: 0 6px 24px rgba(165,31,38,.08)">
+<div role="img" aria-label="Listing photo placeholder: Classic bungalow with a deep lot" style="aspect-ratio: 4 / 3; max-width: 100%; width: 100%; background: #F6F2EE; border: 1px solid #E8DFD7; border-radius: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #6B5A52; font: 600 10px/1.3 'DM Sans', system-ui, sans-serif; letter-spacing: .18em; text-transform: uppercase"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg><span>Listing photo</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 0 8px">
+
+<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 24px; line-height: 1.15; color: #2B1712">Classic bungalow with a deep lot</span>
+<span style="font-family: Lora, Georgia, serif; font-size: 16px; line-height: 1.5; color: #5A2A24">[BEDS] bd · [BATHS] ba · [PRICE]</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; padding: 0 8px"><span style="padding: 6px 14px; border-radius: 999px; background: #E3EAFB; color: #2456D6; font: 600 13px/1.2 'DM Sans', system-ui, sans-serif">[Backyard]</span><span style="padding: 6px 14px; border-radius: 999px; background: #E3EAFB; color: #2456D6; font: 600 13px/1.2 'DM Sans', system-ui, sans-serif">[Front porch]</span><span style="padding: 6px 14px; border-radius: 999px; background: #E3EAFB; color: #2456D6; font: 600 13px/1.2 'DM Sans', system-ui, sans-serif">[Walk to 19th St]</span></div>
+</a>
+<a href="homes.html" class="home-card" style="display: flex; flex-direction: column; gap: 14px; text-decoration: none; color: #2B1712; min-width: 0; background: #FFFFFF; border-radius: 28px; padding: 12px 12px 22px; box-shadow: 0 6px 24px rgba(165,31,38,.08)">
+<div role="img" aria-label="Listing photo placeholder: New build on a wooded street" style="aspect-ratio: 4 / 3; max-width: 100%; width: 100%; background: #F6F2EE; border: 1px solid #E8DFD7; border-radius: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #6B5A52; font: 600 10px/1.3 'DM Sans', system-ui, sans-serif; letter-spacing: .18em; text-transform: uppercase"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg><span>Listing photo</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 0 8px">
+
+<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 24px; line-height: 1.15; color: #2B1712">New build on a wooded street</span>
+<span style="font-family: Lora, Georgia, serif; font-size: 16px; line-height: 1.5; color: #5A2A24">[BEDS] bd · [BATHS] ba · [PRICE]</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; padding: 0 8px"><span style="padding: 6px 14px; border-radius: 999px; background: #E3EAFB; color: #2456D6; font: 600 13px/1.2 'DM Sans', system-ui, sans-serif">[Backyard]</span><span style="padding: 6px 14px; border-radius: 999px; background: #E3EAFB; color: #2456D6; font: 600 13px/1.2 'DM Sans', system-ui, sans-serif">[Front porch]</span><span style="padding: 6px 14px; border-radius: 999px; background: #E3EAFB; color: #2456D6; font: 600 13px/1.2 'DM Sans', system-ui, sans-serif">[Walk to 19th St]</span></div>
+</a>
+<a href="homes.html" class="home-card" style="display: flex; flex-direction: column; gap: 14px; text-decoration: none; color: #2B1712; min-width: 0; background: #FFFFFF; border-radius: 28px; padding: 12px 12px 22px; box-shadow: 0 6px 24px rgba(165,31,38,.08)">
+<div role="img" aria-label="Listing photo placeholder: Mid-century ranch near the trail" style="aspect-ratio: 4 / 3; max-width: 100%; width: 100%; background: #F6F2EE; border: 1px solid #E8DFD7; border-radius: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #6B5A52; font: 600 10px/1.3 'DM Sans', system-ui, sans-serif; letter-spacing: .18em; text-transform: uppercase"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg><span>Listing photo</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 0 8px">
+
+<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 24px; line-height: 1.15; color: #2B1712">Mid-century ranch near the trail</span>
+<span style="font-family: Lora, Georgia, serif; font-size: 16px; line-height: 1.5; color: #5A2A24">[BEDS] bd · [BATHS] ba · [PRICE]</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; padding: 0 8px"><span style="padding: 6px 14px; border-radius: 999px; background: #E3EAFB; color: #2456D6; font: 600 13px/1.2 'DM Sans', system-ui, sans-serif">[Backyard]</span><span style="padding: 6px 14px; border-radius: 999px; background: #E3EAFB; color: #2456D6; font: 600 13px/1.2 'DM Sans', system-ui, sans-serif">[Front porch]</span><span style="padding: 6px 14px; border-radius: 999px; background: #E3EAFB; color: #2456D6; font: 600 13px/1.2 'DM Sans', system-ui, sans-serif">[Walk to 19th St]</span></div>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section id="calendar" style="background: #FCD4DD">
+<div class="wrap" style="padding-top: 80px; padding-bottom: 88px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px; text-align: center">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center">
+<h2 style="margin: 0 auto; line-height: 0; width: 100%; display: flex; justify-content: center"><img src="assets/inline/x2.webp" alt="What’s going down in the Heights?" style="display: block; width: min(100%, 480px); height: auto; margin: 0 auto"></h2>
+<p style="margin: 0; font-family: Lora, Georgia, serif; font-style: italic; font-size: 20px; color: #5A2A24">Shows, markets and porch nights around the Heights.</p>
+</div>
+<div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap">
+<div role="tablist" aria-label="Calendar view" style="display: inline-flex; padding: 4px; border-radius: 999px; background: #FFFFFF; box-shadow: 0 1px 0 rgba(165,31,38,.08)">
+<button type="button" role="tab" aria-selected="{{ cal.weekSel }}" onClick="{{ showWeek }}" style="{{ cal.weekTab }}">Week</button>
+<button type="button" role="tab" aria-selected="{{ cal.monthSel }}" onClick="{{ showMonth }}" style="{{ cal.monthTab }}">Month</button>
+</div>
+<div style="display: flex; align-items: center; gap: 8px">
+<button type="button" aria-label="Previous" onClick="{{ calPrev }}" style="{{ cal.prevStyle }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button>
+<p aria-live="polite" style="margin: 0; min-width: 160px; text-align: center; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 20px; color: #A51F26">{{ cal.label }}</p>
+<button type="button" aria-label="Next" onClick="{{ calNext }}" style="{{ cal.nextStyle }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+</div>
+</div>
+</div>
+<div role="group" aria-label="Filter by type" style="display: flex; gap: 8px; flex-wrap: wrap">
+<sc-for list="{{ cal.catBtns }}" as="c" hint-placeholder-count="6"><button type="button" aria-pressed="{{ c.on }}" onClick="{{ c.pick }}" style="{{ c.style }}">{{ c.name }}</button></sc-for>
+</div>
+<sc-if value="{{ cal.has }}" hint-placeholder-val="{{ true }}">
+<div class="calx" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 28px; align-items: start">
+<a href="events.html" class="cal-feat" style="display: flex; flex-direction: column; background: #FFFFFF; border-radius: 26px; overflow: hidden; text-decoration: none; color: #3A1A17; box-shadow: 0 30px 60px -40px rgba(110,40,25,.45)">
+<div role="img" aria-label="{{ cal.featured.photo }}" style="position: relative; aspect-ratio: 5 / 4; max-width: 100%; background: linear-gradient(160deg, #FBE3D6, #F6C9B4); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #8A4A40; font: 700 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .18em; text-transform: uppercase"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg>Event photo
+<span style="position: absolute; top: 18px; left: 18px; width: 78px; padding: 10px 0 12px; border-radius: 16px; background: #FFFFFF; display: flex; flex-direction: column; align-items: center; gap: 4px; color: #A51F26; box-shadow: 0 8px 20px -12px rgba(110,40,25,.5)"><span style="font: 700 10px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .2em">{{ cal.featured.dow }}</span><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 34px; line-height: 1; letter-spacing: 0; text-transform: none">{{ cal.featured.day }}</span><span style="font: 700 10px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .2em">{{ cal.featured.mon }}</span></span>
+<span style="position: absolute; top: 18px; right: 18px; padding: 8px 12px; border-radius: 999px; background: #A51F26; color: #FFFFFF; font: 700 10px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .18em">{{ cal.featured.cat }}</span>
+</div>
+<div style="padding: 26px 28px 30px; display: flex; flex-direction: column; gap: 10px">
+
+<p style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: clamp(26px, 2.4vw, 34px); line-height: 1.08; color: #A51F26; text-wrap: balance">{{ cal.featured.t }}</p>
+<p style="margin: 0; font-family: Lora, Georgia, serif; font-style: italic; font-size: 18px; color: #5A2A24">{{ cal.featured.date }} · {{ cal.featured.v }}</p>
+<span style="align-self: flex-start; margin-top: 8px; display: inline-flex; align-items: center; gap: 10px; background: #A51F26; color: #FFFFFF; border-radius: 999px; padding: 14px 22px; font: 700 12px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .16em; text-transform: uppercase">Event details <span aria-hidden="true">→</span></span>
+</div>
+</a>
+<div style="background: #FFFFFF; border-radius: 26px; padding: 8px 28px; box-shadow: 0 30px 60px -40px rgba(110,40,25,.45)">
+<div class="cal-list" style="{{ cal.listStyle }}">
+<sc-for list="{{ cal.rest }}" as="e" hint-placeholder-count="5">
+<a href="events.html" class="cal-row" style="display: grid; grid-template-columns: 64px 112px minmax(0, 1fr); gap: 20px; align-items: center; padding: 18px 0; border-bottom: 1px solid #F6DDE3; text-decoration: none; color: #3A1A17">
+<span style="display: flex; flex-direction: column; align-items: center; gap: 3px; color: #A51F26"><span style="font: 700 10px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .2em; text-transform: uppercase; color: #C2492F">{{ e.dow }}</span><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 32px; line-height: 1">{{ e.day }}</span><span style="font: 700 10px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .2em; text-transform: uppercase">{{ e.mon }}</span></span>
+<span role="img" aria-label="{{ e.photo }}" style="width: 112px; aspect-ratio: 4 / 3; border-radius: 12px; background: #FBE3D6; display: grid; place-items: center; color: #A0786E"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg></span>
+<span style="display: flex; flex-direction: column; gap: 5px; min-width: 0"><span style="font: 700 10px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .2em; text-transform: uppercase; color: #C2492F">{{ e.cat }}</span><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 20px; line-height: 1.2; color: #A51F26">{{ e.t }}</span><span style="font-family: Lora, Georgia, serif; font-size: 15px; line-height: 1.35; color: #5A2A24">{{ e.v }}</span></span>
+</a>
+</sc-for>
+<sc-if value="{{ cal.noRest }}" hint-placeholder-val="{{ false }}"><p style="margin: 0; padding: 28px 0; font-family: Lora, Georgia, serif; font-style: italic; font-size: 18px; color: #5A2A24">That’s the one to circle. More listings are on the way.</p></sc-if>
+</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ cal.none }}" hint-placeholder-val="{{ false }}">
+<div style="background: #FFFFFF; border-radius: 26px; padding: 48px; text-align: center; display: flex; flex-direction: column; gap: 8px; align-items: center">
+<p style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 26px; color: #A51F26">Nothing listed here yet</p>
+<p style="margin: 0; font-family: Lora, Georgia, serif; font-style: italic; font-size: 18px; color: #5A2A24">Try another week, or show every type of event.</p>
+</div>
+</sc-if>
+</div>
+</section>
+
+
+<section style="background: #FBF4EA">
+<div class="wrap signrow" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: center; padding-top: 72px; padding-bottom: 72px">
+<img src="assets/inline/x18.webp" alt="Line drawing of the Heights Theater sign" style="width: 100%; max-width: 560px; height: auto; justify-self: center">
+<div style="display: flex; flex-direction: column; gap: 20px; min-width: 0; position: relative">
+
+<h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-variation-settings: 'SOFT' 50, 'opsz' 144; font-weight: 800; font-size: clamp(38px, 4vw, 58px); line-height: 1; letter-spacing: -.015em; color: #A51F26; text-wrap: balance">A small town in the middle of the city.</h2>
+<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #3A1A17; max-width: 44ch">Oscar Martin Carter founded the Heights as its own town in 1891. It still has the tree-lined streets, the porches and the boulevard he planned.</p>
+<a class="more" href="history.html">About the Heights <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+</section>
+<section id="stories" class="wrap" style="padding-top: 72px; padding-bottom: 72px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; border-bottom: 2px solid #A51F26; padding-bottom: 14px">
+<h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-variation-settings: 'SOFT' 50; font-weight: 800; font-size: 40px; line-height: 1; color: #A51F26">The Best of the Heights</h2>
+<a class="more" href="food.html">See all the best <span aria-hidden="true">→</span></a>
+</div>
+<div class="stories" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px">
+<article class="story" style="display: flex; flex-direction: column; gap: 14px">
+<img src="assets/food/the-green-room.webp" alt="The Green Room" loading="lazy" style="aspect-ratio: 3 / 2; max-width: 100%; width: 100%; background: #FFE3D4;  border-radius: 18px;           ;object-fit:cover;display:block">
+
+<h3 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-variation-settings: 'SOFT' 50; font-weight: 700; font-size: 28px; line-height: 1.12"><a href="food.html">The Green Room’s chef’s counter on Yale</a></h3>
+<p style="margin: 0; font-size: 18px; line-height: 1.55; color: #5A2A24">A 26-seat counter with James Beard winner Tom Cunanan.</p>
+</article>
+<article class="story" style="display: flex; flex-direction: column; gap: 14px">
+<img src="https://s.hdnux.com/photos/01/50/01/67/27270651/3/ratio4x3_1920.jpg" alt="Jane and the Lion" loading="lazy" referrerpolicy="no-referrer" style="aspect-ratio: 3 / 2; max-width: 100%; width: 100%; background: #FFE3D4;  border-radius: 18px;           ;height:100%;object-fit:cover;display:block">
+
+<h3 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-variation-settings: 'SOFT' 50; font-weight: 700; font-size: 28px; line-height: 1.12"><a href="food.html">Jane and the Lion Bakehouse</a></h3>
+<p style="margin: 0; font-size: 18px; line-height: 1.55; color: #5A2A24">Toast, sandwiches and egg tarts from Jane Wild’s first solo shop.</p>
+</article>
+<article class="story" style="display: flex; flex-direction: column; gap: 14px">
+<img src="assets/inline/x7.webp" alt="Illustration of a trail winding through bluebonnets" style="width: 100%; aspect-ratio: 3 / 2; object-fit: contain; background: #FFF1E6; border-radius: 18px; padding: 12px">
+
+<h3 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-variation-settings: 'SOFT' 50; font-weight: 700; font-size: 28px; line-height: 1.12"><a href="food.html">The MKT Trail on an old rail line</a></h3>
+<p style="margin: 0; font-size: 18px; line-height: 1.55; color: #5A2A24">Hike-and-bike miles that link up with the Heritage Corridor.</p>
+</article>
+</div>
+</section>
+
+<section id="around" class="wrap" style="padding-top: 72px; padding-bottom: 72px; border-top: 1px solid #E8CFC4; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-variation-settings: 'SOFT' 50; font-weight: 800; font-size: clamp(34px, 3.4vw, 46px); line-height: 1; color: #A51F26">Around the Heights</h2>
+<p style="margin: 0; font-family: Lora, Georgia, serif; font-style: italic; font-size: 21px; color: #5A2A24">Businesses, bands, schools and guides for settling in.</p>
+</div>
+<div class="around" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px">
+<article style="display: flex; flex-direction: column; gap: 16px; min-width: 0">
+<div role="img" aria-label="Photo placeholder: Photo · New Heights opening" style="aspect-ratio: 4 / 3; max-width: 100%; width: 100%; background: #FFE3D4; border: 2px dashed #E7B9A6; border-radius: 18px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: #8A4A40; font: 700 11px/1.3 'DM Sans', system-ui, sans-serif; letter-spacing: .16em; text-transform: uppercase; text-align: center; padding: 12px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg><span>Photo · New Heights opening</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 0 4px">
+
+<h3 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-variation-settings: 'SOFT' 50; font-weight: 700; font-size: 24px; line-height: 1.15; color: #3A1A17">New Heights openings to try this season</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.5; color: #5A2A24">Love Croissants, Angie’s Pizza, The Green Room and more.</p>
+<a class="more" href="food.html" style="margin-top: 4px">See the openings <span aria-hidden="true">→</span></a>
+</div>
+</article>
+<article style="display: flex; flex-direction: column; gap: 16px; min-width: 0">
+<img src="https://applications-media.feverup.com/image/upload/f_auto%2Car_15%3A8%2Cc_fill/fever2/plan/photo/c6ebe784-1cb1-11ee-a01b-d2daa5fc28dc.png" alt="Heights Theater show" loading="lazy" referrerpolicy="no-referrer" style="aspect-ratio: 4 / 3; max-width: 100%; width: 100%;   border-radius: 18px;           ;height:auto;object-fit:cover;display:block">
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 0 4px">
+
+<h3 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-variation-settings: 'SOFT' 50; font-weight: 700; font-size: 24px; line-height: 1.15; color: #3A1A17">Who’s playing the Heights Theater</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.5; color: #5A2A24">They Might Be Giants, Hayes Carll, The Lemon Twigs and more.</p>
+<a class="more" href="music.html" style="margin-top: 4px">Music calendar <span aria-hidden="true">→</span></a>
+</div>
+</article>
+<article style="display: flex; flex-direction: column; gap: 16px; min-width: 0">
+<img src="assets/photos/heights-high.jpg" alt="Heights High School" loading="lazy" style="aspect-ratio: 4 / 3; max-width: 100%; width: 100%;   border-radius: 18px;           ;object-fit:cover;display:block;filter:saturate(.9) contrast(.96) brightness(1.03)">
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 0 4px">
+
+<h3 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-variation-settings: 'SOFT' 50; font-weight: 700; font-size: 24px; line-height: 1.15; color: #3A1A17">Heights schools by zone</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.5; color: #5A2A24">Heights High, Hamilton and Hogg Middle, Harvard, Travis and more.</p>
+<a class="more" href="schools.html" style="margin-top: 4px">School guide <span aria-hidden="true">→</span></a>
+</div>
+</article>
+</div>
+</section>
+<section id="news" style="background: #FBF4EA">
+<div class="wrap" style="padding-top: 80px; padding-bottom: 80px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+<div style="display: flex; flex-direction: column; gap: 10px"><h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: clamp(34px, 3.6vw, 48px); line-height: 1; color: #A51F26">Heard on the porch</h2><p style="margin: 0; font-family: Lora, Georgia, serif; font-style: italic; font-size: 20px; color: #5A2A24">What neighbors are talking about, from the outlets that cover the Heights.</p></div>
+<a href="news.html" style="display: inline-flex; align-items: center; gap: 8px; color: #A51F26; text-decoration: none; font: 700 12px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase">All news <span aria-hidden="true">→</span></a>
+</div>
+<div class="news-grid" style="display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 48px; align-items: start">
+<a href="https://community.click2houston.com/n/the-heights/2026/11/02/donovan-parks-2-million-plans-a-new-way-to-track-delayed-city-projects-and-what-to-know-for-election-day" target="_blank" rel="noopener" class="news-lead" style="display: flex; flex-direction: column; gap: 16px; text-decoration: none; color: #3A1A17">
+<img src="https://houstonheights.org/wp-content/uploads/2025/07/donovan-image-for-website.webp" alt="Donovan Park" loading="lazy" style="aspect-ratio: 16 / 10; max-width: 100%; width: 100%; background: #FBE3D6; border-radius: 22px;           ;object-fit:cover;display:block">
+<span style="font: 700 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .2em; text-transform: uppercase; color: #C2492F">Parks · <span style="color: #8A4A40">Click2Houston</span></span>
+<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: clamp(28px, 2.8vw, 38px); line-height: 1.08; color: #A51F26; text-wrap: balance">Donovan Park’s $2 million plans</span>
+<span style="font-family: Lora, Georgia, serif; font-size: 18px; line-height: 1.55; color: #3A1A17; max-width: 52ch">The Houston Heights Association has raised about $150,000 toward a roughly $2 million Donovan Park renovation.</span>
+</a>
+<div style="display: flex; flex-direction: column; border-top: 2px solid #A51F26">
+<a href="https://community.click2houston.com/n/the-heights/2026/10/28/houston-parks-department-says-they-plan-to-reinstall-basketball-hoops-at-proctor-plaza-park" target="_blank" rel="noopener" class="news-row" style="display: flex; flex-direction: column; gap: 6px; padding: 18px 0; border-bottom: 1px solid #EAD3C6; text-decoration: none; color: #3A1A17">
+<span style="font: 700 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .2em; text-transform: uppercase; color: #C2492F">Parks · <span style="color: #8A4A40">Click2Houston</span></span>
+<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 21px; line-height: 1.2; color: #A51F26">Basketball hoops are coming back to Proctor Plaza Park</span>
+<span style="font-family: Lora, Georgia, serif; font-size: 16px; line-height: 1.5; color: #5A2A24">Hoops removed from the Norhill park are set to return after neighbors asked.</span>
+</a>
+<a href="https://community.click2houston.com/n/the-heights/2026/10/28/montie-beach-park-set-for-2-million-in-improvements-as-houston-invests-in-neighborhood-parks" target="_blank" rel="noopener" class="news-row" style="display: flex; flex-direction: column; gap: 6px; padding: 18px 0; border-bottom: 1px solid #EAD3C6; text-decoration: none; color: #3A1A17">
+<span style="font: 700 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .2em; text-transform: uppercase; color: #C2492F">Parks · <span style="color: #8A4A40">Click2Houston</span></span>
+<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 21px; line-height: 1.2; color: #A51F26">Montie Beach Park set for big improvements</span>
+<span style="font-family: Lora, Georgia, serif; font-size: 16px; line-height: 1.5; color: #5A2A24">The park is in line for upgrades through the city’s push to rebuild neighborhood parks.</span>
+</a>
+<a href="https://community.click2houston.com/n/the-heights/2026/10/17/houston-heights-resident-turns-halloween-decorations-into-fundraiser-for-st-jude" target="_blank" rel="noopener" class="news-row" style="display: flex; flex-direction: column; gap: 6px; padding: 18px 0; border-bottom: 1px solid #EAD3C6; text-decoration: none; color: #3A1A17">
+<span style="font: 700 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .2em; text-transform: uppercase; color: #C2492F">Neighbors · <span style="color: #8A4A40">Click2Houston</span></span>
+<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 21px; line-height: 1.2; color: #A51F26">A Sunset Heights yard display raises money for St. Jude</span>
+<span style="font-family: Lora, Georgia, serif; font-size: 16px; line-height: 1.5; color: #5A2A24">Houston Heights + Friends put QR-code signs in decorated yards across the neighborhood.</span>
+</a>
+<a href="https://community.click2houston.com/n/the-heights/2026/10/15/houston-heights-residents-win-permit-parking-approval-after-yearlong-effort-now-they-want-street-repairs" target="_blank" rel="noopener" class="news-row" style="display: flex; flex-direction: column; gap: 6px; padding: 18px 0; border-bottom: 1px solid #EAD3C6; text-decoration: none; color: #3A1A17">
+<span style="font: 700 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .2em; text-transform: uppercase; color: #C2492F">Streets · <span style="color: #8A4A40">Click2Houston</span></span>
+<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 21px; line-height: 1.2; color: #A51F26">Heights residents win permit parking</span>
+<span style="font-family: Lora, Georgia, serif; font-size: 16px; line-height: 1.5; color: #5A2A24">After a year of petitions, neighbors turned their attention to street repairs.</span>
+</a>
+<a href="https://www.click2houston.com/news/local/2026/08/14/what-can-you-change-on-your-norhill-home-the-citys-design-guidelines-just-took-another-turn/" target="_blank" rel="noopener" class="news-row" style="display: flex; flex-direction: column; gap: 6px; padding: 18px 0; border-bottom: 1px solid #EAD3C6; text-decoration: none; color: #3A1A17">
+<span style="font: 700 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .2em; text-transform: uppercase; color: #C2492F">Homes · <span style="color: #8A4A40">Click2Houston</span></span>
+<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 21px; line-height: 1.2; color: #A51F26">What can you change on your Norhill home?</span>
+<span style="font-family: Lora, Georgia, serif; font-size: 16px; line-height: 1.5; color: #5A2A24">The city’s design guidelines for the historic district took another turn.</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section id="food" style="background: #FFF1E6; overflow: hidden">
+<div class="wrap" style="padding-top: 104px; padding-bottom: 104px; display: flex; flex-direction: column; gap: 48px">
+<div class="ft-head" style="display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: end">
+<div style="display: flex; flex-direction: column; gap: 12px; min-width: 0"><p style="margin: 0; font: 700 12px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .24em; text-transform: uppercase; color: #2456D6">Food &amp; drink</p>
+<h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: clamp(48px, 6vw, 88px); line-height: .92; letter-spacing: -.025em; color: #A51F26">New on the <span style="font-style: italic; color: #E16F4F">table</span></h2>
+<p style="margin: 0; font-family: Lora, Georgia, serif; font-style: italic; font-size: 22px; color: #5A2A24">The newest places to eat and drink in the Heights.</p></div>
+</div>
+<div class="ft-grid" style="display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 28px; align-items: stretch">
+<a href="food.html" class="ft-feat" style="position: relative; display: flex; flex-direction: column; background: #A51F26; border-radius: 28px; overflow: hidden; text-decoration: none; color: #FBF4EA; min-height: 520px">
+<div style="flex: 1; padding: 14px 14px 0; display: flex; min-height: 280px"><img src="assets/food/the-green-room.webp" alt="The Green Room" loading="lazy" style="width: 100%; height: 100%; min-height: 0; background: repeating-linear-gradient(135deg, #FBE3D6 0 14px, #F8D9C9 14px 28px); border-radius: 18px;         ;object-fit:cover;display:block"></div>
+<span aria-hidden="true" style="position: absolute; top: 28px; right: 28px; width: 112px; height: 112px; border-radius: 999px; background: #2456D6; color: #FFFFFF; display: grid; place-items: center; text-align: center; font: 700 11px/1.25 'DM Sans', system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; box-shadow: 0 6px 0 #1B3FA8">James<br>Beard<br>winner</span>
+<div style="padding: 26px 30px 30px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; gap: 8px"><span style="display: inline-flex; align-items: center; padding: 7px 12px; border-radius: 999px; background: #FFBEA1; color: #A51F26; font: 700 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap">Chef’s counter</span><span style="display: inline-flex; align-items: center; padding: 7px 12px; border-radius: 999px; background: rgba(255,246,238,.16); color: #FBF4EA; font: 700 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap">26 seats</span></div>
+<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: clamp(34px, 3.6vw, 52px); line-height: 1; color: #FBF4EA">The Green Room</span>
+<span style="font-family: Lora, Georgia, serif; font-size: 18px; line-height: 1.5; color: #FBF4EA; max-width: 40ch">A chef’s counter on Yale with James Beard winner Tom Cunanan.</span>
+<span style="font: 700 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: #BFD0FF">Houston Heights</span>
+</div></a>
+<div style="display: flex; flex-direction: column; gap: 18px; justify-content: space-between; min-width: 0">
+<a href="food.html" class="ft-tick" style="display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 18px; align-items: center; padding: 14px 20px 14px 14px; background: #FFFFFF; border-radius: 20px; border: 1.5px solid #EAD3C6; text-decoration: none; color: #3A1A17; min-width: 0">
+<div style="aspect-ratio: 1; width: 132px"><img src="assets/food/love-croissants.webp" alt="Love Croissants" loading="lazy" style="width: 100%; height: 100%; min-height: 0; background: repeating-linear-gradient(135deg, #FBE3D6 0 14px, #F8D9C9 14px 28px); border-radius: 14px;         ;object-fit:cover;display:block"></div>
+<div style="display: flex; flex-direction: column; gap: 6px; min-width: 0"><div style="display: flex; flex-wrap: wrap; gap: 6px"><span style="display: inline-flex; align-items: center; padding: 7px 12px; border-radius: 999px; background: #FFBEA1; color: #A51F26; font: 700 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap">Bakery</span></div><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 23px; line-height: 1.1; color: #A51F26">Love Croissants</span><span style="font-family: Lora, Georgia, serif; font-size: 15px; line-height: 1.45; color: #5A2A24">A drive-through croissant bakery just off Durham.</span><span style="font: 700 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: #2456D6">Shady Acres</span></div></a>
+<a href="food.html" class="ft-tick" style="display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 18px; align-items: center; padding: 14px 20px 14px 14px; background: #FFFFFF; border-radius: 20px; border: 1.5px solid #EAD3C6; text-decoration: none; color: #3A1A17; min-width: 0">
+<div style="aspect-ratio: 1; width: 132px"><img src="https://s.hdnux.com/photos/01/21/45/47/21387772/4/1920x0.jpg" alt="Angie’s Pizza" loading="lazy" referrerpolicy="no-referrer" style="width: 100%; height: 100%; min-height: 0; background: repeating-linear-gradient(135deg, #FBE3D6 0 14px, #F8D9C9 14px 28px); border-radius: 14px;         ;object-fit:cover;display:block"></div>
+<div style="display: flex; flex-direction: column; gap: 6px; min-width: 0"><div style="display: flex; flex-wrap: wrap; gap: 6px"><span style="display: inline-flex; align-items: center; padding: 7px 12px; border-radius: 999px; background: #FFBEA1; color: #A51F26; font: 700 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap">Pizza</span></div><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 23px; line-height: 1.1; color: #A51F26">Angie’s Pizza</span><span style="font-family: Lora, Georgia, serif; font-size: 15px; line-height: 1.45; color: #5A2A24">Chef Angelo Emiliani’s pizzeria on W. 11th, with a strong bar.</span><span style="font: 700 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: #2456D6">Houston Heights</span></div></a>
+<a href="food.html" class="ft-tick" style="display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 18px; align-items: center; padding: 14px 20px 14px 14px; background: #FFFFFF; border-radius: 20px; border: 1.5px solid #EAD3C6; text-decoration: none; color: #3A1A17; min-width: 0">
+<div style="aspect-ratio: 1; width: 132px"><img src="https://storage.googleapis.com/de-img/u82577as3a80.webp" alt="Alturas Mexican Cafe" loading="lazy" referrerpolicy="no-referrer" style="width: 100%; height: 100%; min-height: 0; background: repeating-linear-gradient(135deg, #FBE3D6 0 14px, #F8D9C9 14px 28px); border-radius: 14px;         ;object-fit:cover;display:block"></div>
+<div style="display: flex; flex-direction: column; gap: 6px; min-width: 0"><div style="display: flex; flex-wrap: wrap; gap: 6px"><span style="display: inline-flex; align-items: center; padding: 7px 12px; border-radius: 999px; background: #FFBEA1; color: #A51F26; font: 700 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap">Mexican</span></div><span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 23px; line-height: 1.1; color: #A51F26">Alturas Mexican Cafe</span><span style="font-family: Lora, Georgia, serif; font-size: 15px; line-height: 1.45; color: #5A2A24">Street tacos, mole and chilaquiles, with menudo on weekends.</span><span style="font: 700 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: #2456D6">Houston Heights</span></div></a>
+</div></div>
+<div class="ft-foot" style="display: flex; align-items: center; gap: 16px; min-width: 0">
+<div class="ft-row" style="flex: 1; min-width: 0; display: flex; flex-wrap: nowrap; gap: 8px; overflow-x: auto; scrollbar-width: none"><a href="food.html" class="ft-cuis" style="flex: none; display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #EAD3C6; color: #A51F26; text-decoration: none; font: 700 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15c2-7 14-7 16 0"/><path d="M8 15l-1 4M16 15l1 4M12 11v8"/></svg>Bakery</a><a href="food.html" class="ft-cuis" style="flex: none; display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #EAD3C6; color: #A51F26; text-decoration: none; font: 700 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 17H3z"/><circle cx="12" cy="11" r="1.2"/><circle cx="9.5" cy="16" r="1.2"/><circle cx="14.5" cy="16" r="1.2"/></svg>Pizza</a><a href="food.html" class="ft-cuis" style="flex: none; display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #EAD3C6; color: #A51F26; text-decoration: none; font: 700 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c7 0 13-6 13-13"/><path d="M18 6c0-2 1-3 3-3"/></svg>Mexican</a><a href="food.html" class="ft-cuis" style="flex: none; display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #EAD3C6; color: #A51F26; text-decoration: none; font: 700 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16a8 8 0 0 1-16 0z"/><path d="M13 3l-2 7M19 4l-4 6"/></svg>Japanese</a><a href="food.html" class="ft-cuis" style="flex: none; display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #EAD3C6; color: #A51F26; text-decoration: none; font: 700 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18a9 9 0 0 1 18 0z"/><path d="M7 13l2 2M12 11v3M17 13l-2 2"/></svg>Tacos</a><a href="food.html" class="ft-cuis" style="flex: none; display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #EAD3C6; color: #A51F26; text-decoration: none; font: 700 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11a8 6 0 0 1 16 0z"/><path d="M3 14h18M5 17h14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z"/></svg>Burgers</a><a href="food.html" class="ft-cuis" style="flex: none; display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #EAD3C6; color: #A51F26; text-decoration: none; font: 700 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v7a2 2 0 0 0 4 0V3M10 12v9"/><path d="M17 3c-2 2-2 7 0 8v10"/></svg>Italian</a><a href="food.html" class="ft-cuis" style="flex: none; display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #EAD3C6; color: #A51F26; text-decoration: none; font: 700 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h14l-7 8z"/><path d="M12 12v8M8 20h8"/></svg>Cocktails</a></div>
+<a href="food.html" style="flex: none; display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border-radius: 999px; background: #A51F26; color: #FFFFFF; text-decoration: none; font: 700 12px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .16em; text-transform: uppercase; white-space: nowrap">All openings <span aria-hidden="true">→</span></a>
+</div>
+</div>
+</section>
+<section id="music" style="background: #A51F26; color: #FBF4EA">
+<div class="wrap music-grid" style="padding-top: 88px; padding-bottom: 88px; display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 56px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 16px; position: sticky; top: 24px">
+<img src="assets/logo-theater.webp" alt="Line drawing of the Heights Theater marquee" style="display:block;width:min(100%,300px);height:auto;filter:brightness(0) invert(1) sepia(.25) saturate(2) hue-rotate(-15deg) brightness(1.02);margin-bottom:8px">
+<h2 style="margin: 0 0 4px; font-family:'Playfair Display',Georgia,serif; font-style:italic; font-weight:700; font-size:clamp(40px,4.2vw,58px); line-height:1; letter-spacing:-.01em; color:#FBF4EA">Heard in the Heights</h2>
+<p style="margin: 0; font-family: Lora, Georgia, serif; font-style: italic; font-size: 20px; color: #FCD4DD">Local talent and the shows coming to the Heights Theater and White Oak Music Hall.</p>
+<a href="music.html" style="align-self: flex-start; margin-top: 8px; display: inline-flex; align-items: center; gap: 10px; color: #A51F26; background: #FBF4EA; text-decoration: none; border-radius: 999px; padding: 15px 24px; font: 700 12px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .16em; text-transform: uppercase">See the shows <span aria-hidden="true">→</span></a>
+</div>
+<div class="music-list" style="display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 40px">
+<div style="display: flex; align-items: center; gap: 18px; padding: 22px 0; border-top: 1px solid rgba(251,244,234,.25); min-width: 0">
+<span role="img" aria-label="Photo of Sarah Golden" title="Add photo: Sarah Golden" style="flex: none; width: 76px; height: 76px; border-radius: 999px; background: #C9513A; border: 3px solid #FFBEA1; display: grid; place-items: center; font: 700 22px/1 'Playfair Display', Georgia, serif; color: #FBF4EA; letter-spacing: .02em">SG</span>
+<div style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
+<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 26px; line-height: 1.1; color: #FBF4EA">Sarah Golden</span>
+<span style="font-family: Lora, Georgia, serif; font-style: italic; font-size: 16px; line-height: 1.5; color: #FCD4DD">Heights-raised folk singer with a new album, Live Wire.</span>
+</div>
+</div>
+<div style="display: flex; align-items: center; gap: 18px; padding: 22px 0; border-top: 1px solid rgba(251,244,234,.25); min-width: 0">
+<img src="assets/events/hayes-carll.jpg" alt="Hayes Carll" loading="lazy" style="flex: none; width: 76px; height: 76px; border-radius: 999px; background: #C9513A; border: 3px solid #FFBEA1;     ;object-fit:cover;display:block;filter:saturate(.9) contrast(.96) brightness(1.03)">
+<div style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
+<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 26px; line-height: 1.1; color: #FBF4EA">Hayes Carll</span>
+<span style="font-family: Lora, Georgia, serif; font-style: italic; font-size: 16px; line-height: 1.5; color: #FCD4DD">Two holiday nights at the Heights Theater.</span>
+</div>
+</div>
+<div style="display: flex; align-items: center; gap: 18px; padding: 22px 0; border-top: 1px solid rgba(251,244,234,.25); min-width: 0">
+<img src="assets/events/lemon-twigs.jpg" alt="The Lemon Twigs" loading="lazy" style="flex: none; width: 76px; height: 76px; border-radius: 999px; background: #C9513A; border: 3px solid #FFBEA1;     ;object-fit:cover;display:block;filter:saturate(.9) contrast(.96) brightness(1.03)">
+<div style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
+<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 26px; line-height: 1.1; color: #FBF4EA">The Lemon Twigs</span>
+<span style="font-family: Lora, Georgia, serif; font-style: italic; font-size: 16px; line-height: 1.5; color: #FCD4DD">Brothers playing ’60s- and ’70s-style pop rock.</span>
+</div>
+</div>
+<div style="display: flex; align-items: center; gap: 18px; padding: 22px 0; border-top: 1px solid rgba(251,244,234,.25); min-width: 0">
+<img src="assets/events/jack-ingram.jpg" alt="Jack Ingram" loading="lazy" style="flex: none; width: 76px; height: 76px; border-radius: 999px; background: #C9513A; border: 3px solid #FFBEA1;     ;object-fit:cover;display:block;filter:saturate(.9) contrast(.96) brightness(1.03)">
+<div style="display: flex; flex-direction: column; gap: 6px; min-width: 0">
+<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 26px; line-height: 1.1; color: #FBF4EA">Jack Ingram</span>
+<span style="font-family: Lora, Georgia, serif; font-style: italic; font-size: 16px; line-height: 1.5; color: #FCD4DD">An acoustic holiday show the night of Lights in the Heights.</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="schools" style="background: #FBF4EA">
+<div class="wrap" style="padding-top: 104px; padding-bottom: 104px; display: flex; flex-direction: column; gap: 64px">
+<div style="display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 32px; align-items: end">
+<img src="assets/icon-schools.webp" alt="" style="width: 120px; height: auto; display: block">
+<div style="display: flex; flex-direction: column; gap: 12px; min-width: 0"><h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: clamp(48px, 6vw, 88px); line-height: .92; letter-spacing: -.025em; color: #A51F26">Heights <span style="font-style: italic; color: #E16F4F">schools</span></h2><p style="margin: 0; font-family: Lora, Georgia, serif; font-style: italic; font-size: 22px; color: #5A2A24">Who's zoned where, at a glance.</p></div>
+<a href="schools.html" style="display: inline-flex; align-items: center; gap: 10px; padding: 16px 26px; border-radius: 999px; background: #2456D6; color: #FFFFFF; text-decoration: none; font: 700 13px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .16em; text-transform: uppercase; white-space: nowrap">Find your school <span aria-hidden="true">→</span></a>
+</div>
+<div class="ff" style="position:relative;display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(40px,8vw,140px);align-items:center;padding:8px 0">
+<img class="ff-icon" src="assets/icon-schools.webp" alt="" aria-hidden="true"><svg class="ff-svg" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible;z-index:1;pointer-events:none"></svg>
+<div style="display:flex;flex-direction:column;gap:10px"><span style="font:700 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#2456D6;margin-bottom:4px"><b style="font:inherit;background:#FFF8EE;padding:4px 14px;position:relative;z-index:2;border-radius:999px">Elementary schools</b></span><button type="button" class="ff-n ff-es" data-id="harvard" data-to="hogg" style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;gap:4px;width:100%;padding:10px 16px;border-radius:999px;border:1.5px solid rgba(36,86,214,.35);background:#FFFFFF;color:#13296F;font:700 15px/1.1 'Playfair Display',Georgia,serif;text-align:left;cursor:pointer;transition:background .25s,color .25s,opacity .25s,transform .25s"><span class="ff-logo" role="img" aria-label="Harvard logo coming soon">H</span><span class="ff-name">Harvard</span></button><button type="button" class="ff-n ff-es" data-id="browning" data-to="hogg" style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;gap:4px;width:100%;padding:10px 16px;border-radius:999px;border:1.5px solid rgba(36,86,214,.35);background:#FFFFFF;color:#13296F;font:700 15px/1.1 'Playfair Display',Georgia,serif;text-align:left;cursor:pointer;transition:background .25s,color .25s,opacity .25s,transform .25s"><span class="ff-logo" role="img" aria-label="Browning logo coming soon">B</span><span class="ff-name">Browning</span></button><button type="button" class="ff-n ff-es" data-id="travis" data-to="hogg" style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;gap:4px;width:100%;padding:10px 16px;border-radius:999px;border:1.5px solid rgba(36,86,214,.35);background:#FFFFFF;color:#13296F;font:700 15px/1.1 'Playfair Display',Georgia,serif;text-align:left;cursor:pointer;transition:background .25s,color .25s,opacity .25s,transform .25s"><span class="ff-logo" role="img" aria-label="Travis logo" style="overflow:hidden;padding:0"><img src="https://resources.finalsite.net/images/f_auto%2Cq_auto%2Ct_image_size_2/v1772810766/houstonisdorg/tpnyjfuezmkvnkfrbwzb/tiger_headband.png" alt="Travis Tigers logo" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;border-radius:50%;padding:3px;box-sizing:border-box;background:#FFFFFF"></span><span class="ff-name">Travis</span></button><button type="button" class="ff-n ff-es" data-id="crockett" data-to="hogg" style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;gap:4px;width:100%;padding:10px 16px;border-radius:999px;border:1.5px solid rgba(36,86,214,.35);background:#FFFFFF;color:#13296F;font:700 15px/1.1 'Playfair Display',Georgia,serif;text-align:left;cursor:pointer;transition:background .25s,color .25s,opacity .25s,transform .25s"><span class="ff-logo" role="img" aria-label="Crockett logo coming soon">C</span><span class="ff-name">Crockett</span></button><button type="button" class="ff-n ff-es" data-id="field" data-to="hogg hamilton" style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;gap:4px;width:100%;padding:10px 16px;border-radius:999px;border:1.5px solid rgba(36,86,214,.35);background:#FFFFFF;color:#13296F;font:700 15px/1.1 'Playfair Display',Georgia,serif;text-align:left;cursor:pointer;transition:background .25s,color .25s,opacity .25s,transform .25s"><span class="ff-logo" role="img" aria-label="Field logo" style="overflow:hidden;padding:0"><img src="https://resources.finalsite.net/images/f_auto%2Cq_auto%2Ct_image_size_2/v1773937153/houstonisdorg/slqrctfakepeyzt4vurv/FieldElPrimaryThumbnailImage.png" alt="Field Lions logo" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;border-radius:50%;padding:3px;box-sizing:border-box;background:#FFFFFF"></span><span class="ff-name">Field</span></button><button type="button" class="ff-n ff-es" data-id="helms" data-to="hamilton" style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;gap:4px;width:100%;padding:10px 16px;border-radius:999px;border:1.5px solid rgba(36,86,214,.35);background:#FFFFFF;color:#13296F;font:700 15px/1.1 'Playfair Display',Georgia,serif;text-align:left;cursor:pointer;transition:background .25s,color .25s,opacity .25s,transform .25s"><span class="ff-logo" role="img" aria-label="Helms logo" style="overflow:hidden;padding:0"><img src="https://pbs.twimg.com/profile_images/480055713016737792/fCQDuyUI_400x400.png" alt="Helms Eagles logo" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;border-radius:50%;padding:3px;box-sizing:border-box;background:#FFFFFF"></span><span class="ff-name">Helms</span></button><button type="button" class="ff-n ff-es" data-id="love" data-to="hogg hamilton" style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;gap:4px;width:100%;padding:10px 16px;border-radius:999px;border:1.5px solid rgba(36,86,214,.35);background:#FFFFFF;color:#13296F;font:700 15px/1.1 'Playfair Display',Georgia,serif;text-align:left;cursor:pointer;transition:background .25s,color .25s,opacity .25s,transform .25s"><span class="ff-logo" role="img" aria-label="Love logo" style="overflow:hidden;padding:0"><img src="https://pbs.twimg.com/profile_images/1303811370807373824/FD_t-Zzm.jpg" alt="Love Lions logo" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;border-radius:50%;padding:3px;box-sizing:border-box;background:#FFFFFF"></span><span class="ff-name">Love</span></button><button type="button" class="ff-n ff-es" data-id="sinclair" data-to="hamilton" style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;gap:4px;width:100%;padding:10px 16px;border-radius:999px;border:1.5px solid rgba(36,86,214,.35);background:#FFFFFF;color:#13296F;font:700 15px/1.1 'Playfair Display',Georgia,serif;text-align:left;cursor:pointer;transition:background .25s,color .25s,opacity .25s,transform .25s"><span class="ff-logo" role="img" aria-label="Sinclair logo" style="overflow:hidden;padding:0"><img src="https://resources.finalsite.net/images/f_auto%2Cq_auto%2Ct_image_size_2/v1758053919/houstonisdorg/rkn7rpv3fh9bupoborgt/SinclairES_Logo.png" alt="Sinclair Superstars logo" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;border-radius:50%;padding:3px;box-sizing:border-box;background:#FFFFFF"></span><span class="ff-name">Sinclair</span></button></div>
+<div style="display:flex;flex-direction:column;gap:18px"><span style="font:700 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#2456D6;margin-bottom:4px"><b style="font:inherit;background:#FFF8EE;padding:4px 14px;position:relative;z-index:2;border-radius:999px">Middle schools</b></span><button type="button" class="ff-n ff-ms" data-id="hogg" data-to="heights waltrip" style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;gap:4px;width:100%;padding:16px 20px;border-radius:999px;border:1.5px solid rgba(36,86,214,.35);background:#FFFFFF;color:#13296F;font:700 18px/1.1 'Playfair Display',Georgia,serif;text-align:left;cursor:pointer;transition:background .25s,color .25s,opacity .25s,transform .25s"><span class="ff-logo" role="img" aria-label="Hogg logo" style="overflow:hidden;padding:0"><img src="https://static1.squarespace.com/static/545ffe3ee4b0f587f5cc67f7/5462d2c2e4b0779fb5a8d84c/555a3db3e4b0acfabf1493dd/1431978410174/?format=1500w" alt="Hogg Razorbacks logo" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;border-radius:50%;padding:3px;box-sizing:border-box;background:#FFFFFF"></span><span class="ff-name">Hogg</span></button><button type="button" class="ff-n ff-ms" data-id="hamilton" data-to="heights waltrip" style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;gap:4px;width:100%;padding:16px 20px;border-radius:999px;border:1.5px solid rgba(36,86,214,.35);background:#FFFFFF;color:#13296F;font:700 18px/1.1 'Playfair Display',Georgia,serif;text-align:left;cursor:pointer;transition:background .25s,color .25s,opacity .25s,transform .25s"><span class="ff-logo" role="img" aria-label="Hamilton logo coming soon">H</span><span class="ff-name">Hamilton</span></button></div>
+<div style="display:flex;flex-direction:column;gap:18px"><span style="font:700 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#A51F26;margin-bottom:4px"><b style="font:inherit;background:#FFF8EE;padding:4px 14px;position:relative;z-index:2;border-radius:999px">High schools</b></span><div class="ff-hs-wrap" style="display:flex;flex-direction:column;align-items:center;gap:10px"><button type="button" class="ff-n ff-hs" data-id="heights" data-to="" style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;gap:4px;width:100%;padding:16px 20px;border-radius:999px;border:1.5px solid #A51F26;background:#A51F26;color:#FFF8EE;font:700 18px/1.1 'Playfair Display',Georgia,serif;text-align:left;cursor:pointer;transition:background .25s,color .25s,opacity .25s,transform .25s"><span class="ff-logo" role="img" aria-label="Heights High logo placeholder">H</span><span class="ff-name">Heights High</span><span style="font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;opacity:.8">★ Bulldogs</span></button><a href="https://www.maxpreps.com/tx/houston/heights-bulldogs/football/schedule/" target="_blank" rel="noopener" class="ff-fb" style="position:relative;z-index:2;display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;background:#FFFFFF;border:1.5px solid #A51F26;color:#A51F26;text-decoration:none;font:700 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase">Football schedule ↗</a></div><div class="ff-hs-wrap" style="display:flex;flex-direction:column;align-items:center;gap:10px"><button type="button" class="ff-n ff-hs" data-id="waltrip" data-to="" style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;gap:4px;width:100%;padding:16px 20px;border-radius:999px;border:1.5px solid #A51F26;background:#A51F26;color:#FFF8EE;font:700 18px/1.1 'Playfair Display',Georgia,serif;text-align:left;cursor:pointer;transition:background .25s,color .25s,opacity .25s,transform .25s"><span class="ff-logo" role="img" aria-label="Waltrip High logo placeholder">W</span><span class="ff-name">Waltrip High</span><span style="font:600 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;opacity:.8">★ Rams</span></button><a href="https://www.maxpreps.com/tx/houston/waltrip-rams/football/schedule/" target="_blank" rel="noopener" class="ff-fb" style="position:relative;z-index:2;display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;background:#FFFFFF;border:1.5px solid #2456D6;color:#2456D6;text-decoration:none;font:700 11px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase">Football schedule ↗</a></div></div>
+<p style="margin:0;padding-top:20px;border-top:1px solid #F2D3C4;width:100%;text-align:center;font:italic 15px/1.5 Lora,Georgia,serif;color:#8A4A40"><span style="display:inline-flex;align-items:center;gap:8px;margin-right:18px"><i style="width:22px;height:3px;border-radius:3px;background:#2456D6;display:inline-block"></i>Through Hogg</span><span style="display:inline-flex;align-items:center;gap:8px;margin-right:18px"><i style="width:22px;height:3px;border-radius:3px;background:#E16F4F;display:inline-block"></i>Through Hamilton</span>Tap a school to trace its path. Based on HISD feeder patterns; some schools split by address.</p></div>
+
+
+<p style="margin: 0; font-family: Lora, Georgia, serif; font-size: 15px; color: #8A4A40">Zones change. Confirm an address with Houston ISD before you buy or rent.</p>
+</div>
+<style>@media (max-width: 700px){#schools .ff{gap:24px!important}#schools .ff-n{font-size:13px!important;padding:8px 10px!important}}@media (max-width: 900px){#schools .wrap>div:first-child{grid-template-columns:minmax(0,1fr)!important}}</style>
+</section>
+<section id="moving" style="background: #A51F26">
+<div class="wrap" style="padding-top: 80px; padding-bottom: 80px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+<div style="display: flex; flex-direction: column; gap: 10px"><h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: clamp(34px, 3.6vw, 48px); line-height: 1; color: #FBF4EA">Moving guides</h2><p style="margin: 0; font-family: Lora, Georgia, serif; font-style: italic; font-size: 20px; color: #FFD9C7">Reasons people choose each corner of the Heights, and what to check before you sign.</p></div>
+<a href="guides.html" style="display: inline-flex; align-items: center; gap: 8px; color: #FBF4EA; text-decoration: none; font: 700 12px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase">All guides <span aria-hidden="true">→</span></a>
+</div>
+<div class="grid3b" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px">
+<a href="guides.html#the-heights" class="lift" style="display: flex; flex-direction: column; gap: 10px; background: #FFFFFF; border-radius: 20px; padding: 26px 26px 24px; text-decoration: none; color: #3A1A17; min-width: 0">
+
+<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 24px; line-height: 1.15; color: #A51F26">Houston Heights</span>
+<span style="font-family: Lora, Georgia, serif; font-size: 16px; line-height: 1.5; color: #5A2A24">Victorian and Craftsman homes, the boulevard esplanade and 19th Street.</span>
+<span style="display: inline-flex; align-items: center; gap: 8px; color: #A51F26; text-decoration: none; font: 700 12px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; margin-top: auto; padding-top: 6px">Read the guide <span aria-hidden="true">→</span></span>
+</a>
+<a href="guides.html#norhill" class="lift" style="display: flex; flex-direction: column; gap: 10px; background: #FFFFFF; border-radius: 20px; padding: 26px 26px 24px; text-decoration: none; color: #3A1A17; min-width: 0">
+
+<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 24px; line-height: 1.15; color: #A51F26">Norhill</span>
+<span style="font-family: Lora, Georgia, serif; font-size: 16px; line-height: 1.5; color: #5A2A24">1920s bungalows in a city historic district, with esplanades.</span>
+<span style="display: inline-flex; align-items: center; gap: 8px; color: #A51F26; text-decoration: none; font: 700 12px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; margin-top: auto; padding-top: 6px">Read the guide <span aria-hidden="true">→</span></span>
+</a>
+<a href="guides.html#sunset-heights" class="lift" style="display: flex; flex-direction: column; gap: 10px; background: #FFFFFF; border-radius: 20px; padding: 26px 26px 24px; text-decoration: none; color: #3A1A17; min-width: 0">
+
+<span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: 24px; line-height: 1.15; color: #A51F26">Sunset Heights</span>
+<span style="font-family: Lora, Georgia, serif; font-size: 16px; line-height: 1.5; color: #5A2A24">Classic bungalows on North Main and Airline.</span>
+<span style="display: inline-flex; align-items: center; gap: 8px; color: #A51F26; text-decoration: none; font: 700 12px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; margin-top: auto; padding-top: 6px">Read the guide <span aria-hidden="true">→</span></span>
+</a>
+</div>
+</div>
+</section>
+
+<section id="hoods" style="background: #FFF1E6; overflow: hidden">
+<div class="wrap" style="padding-top: 72px; padding-bottom: 88px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; flex-wrap: wrap">
+<div style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
+
+<h2 style="margin: 0; min-height: 120px; display: flex; align-items: center; line-height: 0">
+<sc-if value="{{ hood.hasImg }}" hint-placeholder-val="{{ true }}"><img src="{{ hood.img }}" alt="{{ hood.name }}" style="{{ hood.imgStyle }}"></sc-if>
+<sc-if value="{{ hood.noImg }}" hint-placeholder-val="{{ false }}"><span style="font-family: Caveat, 'Segoe Print', 'Bradley Hand', cursive; font-weight: 700; color: #A51F26; line-height: 1; font-size: 104px">{{ hood.name }}</span></sc-if>
+</h2>
+</div>
+<div style="display: flex; gap: 10px">
+<button type="button" aria-label="Previous neighborhood" onClick="{{ hoodPrev }}" style="width: 52px; height: 52px; border-radius: 999px; border: 1.5px solid #A51F26; background: #FFFFFF; color: #A51F26; display: grid; place-items: center; cursor: pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button>
+<button type="button" aria-label="Next neighborhood" onClick="{{ hoodNext }}" style="width: 52px; height: 52px; border-radius: 999px; border: 1.5px solid #A51F26; background: #FFFFFF; color: #A51F26; display: grid; place-items: center; cursor: pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+</div>
+</div>
+<div class="hslide" style="position: relative; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 0; background: #FFFFFF; border-radius: 28px; overflow: visible; box-shadow: 0 30px 60px -40px rgba(110,40,25,.35)">
+<div role="img" aria-label="{{ hood.photoLabel }}" style="position: relative; min-height: 460px; border-radius: 28px 0 0 28px; background: linear-gradient(160deg, #FBE3D6, #F6C9B4); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: #8A4A40; font: 700 11px/1.3 'DM Sans', system-ui, sans-serif; letter-spacing: .18em; text-transform: uppercase; text-align: center; padding: 24px"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg><span>Photo · {{ hood.photo }}</span>
+<span style="position: absolute; left: 20px; bottom: 20px; padding: 8px 14px; border-radius: 999px; background: #FFFFFF; color: #A51F26; font: 700 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .16em">{{ hood.name }}</span></div>
+<div style="padding: 44px 48px; display: flex; flex-direction: column; gap: 24px; min-width: 0">
+<p style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: clamp(24px, 2.2vw, 30px); line-height: 1.25; color: #3A1A17; text-wrap: balance">{{ hood.tag }}</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{ hood.pts }}" as="pt" hint-placeholder-count="3"><span style="padding: 9px 14px; border-radius: 999px; background: #FCD4DD; color: #A51F26; font: 600 14px/1.2 'DM Sans', system-ui, sans-serif">{{ pt }}</span></sc-for>
+</div>
+<div class="hfacts" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; border-top: 1px solid #F2D3C4">
+<sc-for list="{{ hood.facts }}" as="f" hint-placeholder-count="4"><div style="display: flex; flex-direction: column; gap: 6px; padding: 16px 16px 16px 0; border-bottom: 1px solid #F2D3C4; min-width: 0"><span style="font: 700 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .2em; text-transform: uppercase; color: #C2492F">{{ f.k }}</span><span style="font-family: Lora, Georgia, serif; font-size: 17px; line-height: 1.4; color: #3A1A17">{{ f.v }}</span></div></sc-for>
+</div>
+<a href="neighborhoods.html#{{ hood.slug }}" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; color: #FFFFFF; background: #A51F26; text-decoration: none; border-radius: 999px; padding: 15px 24px; font: 700 12px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .16em; text-transform: uppercase">Explore {{ hood.name }} <span aria-hidden="true">→</span></a>
+</div>
+<img class="sprig" src="assets/inline/x19.webp" alt="" aria-hidden="true" style="position: absolute; right: -34px; bottom: -46px; height: 210px; width: auto; pointer-events: none">
+</div>
+<div class="htabs" role="tablist" aria-label="Neighborhoods" style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center">
+<sc-for list="{{ hoodTabs }}" as="t" hint-placeholder-count="5"><button type="button" role="tab" aria-selected="{{ t.sel }}" aria-label="{{ t.name }}" onClick="{{ t.pick }}" style="{{ t.style }}"><sc-if value="{{ t.hasImg }}" hint-placeholder-val="{{ true }}"><img src="{{ t.img }}" alt="" style="height: 40px; width: auto; max-width: 100%; display: block"></sc-if><sc-if value="{{ t.noImg }}" hint-placeholder-val="{{ false }}"><span style="font-family: Caveat, 'Segoe Print', 'Bradley Hand', cursive; font-weight: 700; color: #A51F26; line-height: 1; font-size: 28px">{{ t.name }}</span></sc-if></button></sc-for>
+</div>
+</div>
+</section>
+
+<section aria-label="Did you know" style="background: #FBF4EA">
+<div class="wrap" style="padding-top: 96px; padding-bottom: 96px">
+<div class="dyk" style="position: relative; isolation: isolate; display: grid; grid-template-columns: 260px minmax(0, 1fr) auto; gap: 56px; align-items: center; background: radial-gradient(60% 90% at 100% 0%, rgba(225,111,79,.55), rgba(225,111,79,0) 70%), #A51F26; color: #FBF4EA; border: 0; border-radius: 40px; padding: 64px 64px 64px 72px; box-shadow: 0 24px 60px rgba(120,18,24,.25); overflow: visible">
+<p style="position: absolute; top: -16px; left: 72px; margin: 0; padding: 9px 18px; border-radius: 999px; background: #FFBEA1; color: #A51F26; font: 700 11px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .2em; text-transform: uppercase">Heights history</p>
+<img class="sprig" src="assets/inline/x4.webp" alt="" aria-hidden="true" style="position: absolute; left: -40px; bottom: -30px; height: 210px; width: auto; pointer-events: none; z-index: 2">
+<div role="img" aria-label="{{ person.photoLabel }}" style="width: 260px; height: 300px; max-width: 100%; border-radius: 999px 999px 28px 28px; background: #FBE3D6; border: 2px dashed #E7A58C; outline: 8px solid #FFBEA1; outline-offset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; color: #8A4A40; font: 700 10px/1.25 'DM Sans', system-ui, sans-serif; letter-spacing: .16em; text-transform: uppercase; text-align: center; padding: 18px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg><span>Photo · {{ person.name }}</span></div>
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 0">
+<h3 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 600; font-size: 44px; line-height: 1; letter-spacing: -.01em; color: #FFBEA1">Did you know?</h3>
+<p style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-size: clamp(36px, 3.6vw, 52px); line-height: 1; color: #FBF4EA">{{ person.name }}</p>
+<p style="margin: 0; font-family: Lora, Georgia, serif; font-style: italic; font-size: 22px; line-height: 1.5; color: #FBF4EA; max-width: 40ch; padding-left: 20px; border-left: 3px solid #E16F4F">{{ person.line }}</p>
+</div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 14px">
+<div style="display: flex; gap: 10px">
+<button type="button" aria-label="Previous person" onClick="{{ prev }}" style="width: 44px; height: 44px; border-radius: 999px; border: 0; background: #FBF4EA; color: #A51F26; width: 52px; height: 52px; display: grid; place-items: center; cursor: pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button>
+<button type="button" aria-label="Next person" onClick="{{ next }}" style="width: 44px; height: 44px; border-radius: 999px; border: 0; background: #FBF4EA; color: #A51F26; width: 52px; height: 52px; display: grid; place-items: center; cursor: pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+</div>
+<div style="display: flex; gap: 8px">
+<sc-for list="{{ dots }}" as="d" hint-placeholder-count="4"><button type="button" aria-label="{{ d.label }}" onClick="{{ d.pick }}" style="{{ d.style }}"></button></sc-for>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section style="background: #FBF4EA">
+<div class="wrap" style="padding-top: 56px; padding-bottom: 56px; display: flex; flex-direction: column; gap: 20px; align-items: center; text-align: center">
+<div aria-hidden="true" style="display: flex; align-items: flex-end; justify-content: center; gap: 4px; margin-bottom: -6px"><img src="assets/inline/x3.webp" alt="" style="height: 96px; width: auto; transform: scaleX(-1)"><img src="assets/inline/x4.webp" alt="" style="height: 80px; width: auto"></div>
+<h2 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-variation-settings: 'SOFT' 50; font-weight: 800; font-size: clamp(32px, 3.6vw, 48px); line-height: 1.05; color: #A51F26; text-wrap: balance">Get the paper on your porch every Friday.</h2>
+<p style="margin: 0; font-family: Lora, Georgia, serif; font-style: italic; font-size: 21px; color: #5A2A24">One email. The week's stories, events and new homes.</p>
+<form class="signup" onSubmit="{{ stop }}" style="display: flex; gap: 10px; align-items: center; width: 100%; max-width: 520px">
+<label for="ed-email" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Email address</label>
+<input id="ed-email" type="email" placeholder="you@email.com" style="flex: 1; min-width: 0; height: 52px; padding: 0 20px; border-radius: 999px; border: 1.5px solid #A51F26; background: #FFFFFF; font: 400 17px/1 'DM Sans', system-ui, sans-serif; color: #3A1A17">
+<button type="submit" style="height: 52px; padding: 0 26px; border-radius: 999px; border: 0; background: #A51F26; color: #FBF4EA; font: 700 13px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; cursor: pointer">Subscribe</button>
+</form>
+</div>
+</section>
+
+<footer style="background: #FBF4EA">
+<img src="assets/inline/x5.webp" alt="" aria-hidden="true" style="display: block; width: 100%; max-width: 1240px; height: auto; margin: 56px auto 0">
+<div style="background: #A51F26; color: #FBF4EA">
+<div class="wrap foot-cols" style="display: grid; grid-template-columns: minmax(0, 2fr) repeat(3, minmax(0, 1fr)); gap: 32px; padding-top: 48px; padding-bottom: 48px; font: 400 15px/1.8 'DM Sans', system-ui, sans-serif">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<img src="assets/inline/x6.webp" alt="Living in the Heights" style="height: 96px; max-width: 100%; width: auto; align-self: flex-start">
+<p style="margin: 0; font-family: Lora, Georgia, serif; font-style: italic; font-size: 18px; line-height: 1.4">The neighborhood paper for the Houston Heights.</p>
+</div>
+<div><p style="margin: 0 0 6px; font-weight: 700; font-size: 12px; letter-spacing: .18em; text-transform: uppercase">Read</p><a href="news.html" style="color: #FBF4EA; display: block">News</a><a href="events.html" style="color: #FBF4EA; display: block">Events</a><a href="guides.html" style="color: #FBF4EA; display: block">Guide</a></div>
+<div><p style="margin: 0 0 6px; font-weight: 700; font-size: 12px; letter-spacing: .18em; text-transform: uppercase">Homes</p><a href="homes.html" style="color: #FBF4EA; display: block">Listings</a><a href="neighborhoods.html" style="color: #FBF4EA; display: block">Neighborhoods</a></div>
+<div><p style="margin: 0 0 6px; font-weight: 700; font-size: 12px; letter-spacing: .18em; text-transform: uppercase">Living in the Heights</p><a href="history.html" style="color: #FBF4EA; display: block">About</a><a href="#top" style="color: #FBF4EA; display: block">Send a tip</a><a href="#top" style="color: #FBF4EA; display: block">Advertise</a></div>
+</div>
+</div>
+<div aria-label="Our sites" style="background:#13296F;color:#fff8ee;padding:10px 0"><nav aria-label="Switch site (footer)" style="max-width:1360px;margin:0 auto;padding:0 clamp(20px,5vw,56px);box-sizing:border-box;display:flex;align-items:center;justify-content:flex-end;gap:12px;flex-wrap:wrap"><div style="display:flex;gap:4px;padding:3px;border-radius:999px;background:rgba(255,248,238,.14);font:600 12px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase"><a href="index.html" aria-current="page" style="display:flex;align-items:center;padding:8px 18px;border-radius:999px;text-decoration:none;white-space:nowrap;background:#fff8ee;color:#13296F">Living in the Heights</a><a href="../Draper Real Estate.dc.html" style="display:flex;align-items:center;padding:8px 18px;border-radius:999px;text-decoration:none;white-space:nowrap;color:#fff8ee">Homes in the Heights</a></div></nav></div></footer>
+
+</div>
+</script>
+<script>
+(function(){
+  class DCLogic { constructor(props){ this.props = props || {}; this.state = {}; }
+    setState(p){ Object.assign(this.state, p); render(); } }
+  window.DCLogic = DCLogic;
+  var tpl = document.createElement('template');
+  tpl.innerHTML = document.getElementById('dc-tpl').textContent;
+  var root = document.getElementById('dc-root');
+  var comp;
+  function get(path, sc){
+    path = path.trim();
+    if (path === 'true') return true; if (path === 'false') return false;
+    var parts = path.split('.'), v = sc;
+    for (var i = 0; i < parts.length; i++){ if (v == null) return undefined; v = v[parts[i]]; }
+    return v;
+  }
+  var RX = /\{\{([^}]*)\}\}/g;
+  function interp(str, sc){
+    var m = str.match(/^\s*\{\{([^}]*)\}\}\s*$/);
+    if (m) return get(m[1], sc);
+    return str.replace(RX, function(_, p){ var v = get(p, sc); return v == null ? '' : String(v); });
+  }
+  function renderKids(node, sc, out){ node.childNodes.forEach(function(c){ renderNode(c, sc, out); }); }
+  function renderNode(n, sc, out){
+    if (n.nodeType === 3){ out.push(document.createTextNode(n.nodeValue.indexOf('{{') < 0 ? n.nodeValue : interp(n.nodeValue, sc) + '')); return; }
+    if (n.nodeType !== 1) return;
+    var tag = n.localName;
+    if (tag === 'sc-if'){ if (interp(n.getAttribute('value'), sc)) renderKids(n, sc, out); return; }
+    if (tag === 'sc-for'){
+      var list = interp(n.getAttribute('list'), sc) || [], as = n.getAttribute('as');
+      list.forEach(function(item){ var s2 = Object.create(sc); s2[as] = item; renderKids(n, s2, out); });
+      return;
+    }
+    var el = n.cloneNode(false);
+    Array.from(n.attributes).forEach(function(a){
+      if (a.value.indexOf('{{') < 0) return;
+      var v = interp(a.value, sc);
+      if (/^on/i.test(a.name)){ el.removeAttribute(a.name); if (typeof v === 'function') el.addEventListener(a.name.slice(2).toLowerCase(), v); }
+      else el.setAttribute(a.name, v == null ? '' : String(v));
+    });
+    var kids = []; renderKids(n.content || n, sc, kids);
+    kids.forEach(function(k){ el.appendChild(k); });
+    out.push(el);
+  }
+  function render(){
+    var out = []; renderKids(tpl.content, comp.renderVals(), out);
+    root.replaceChildren.apply(root, out);
+  }
+  window.__dcStart = function(C){ comp = new C({}); render(); };
+})();
+</script>
+<script>
+
+function calModel(EV, view, w, m, cat) {
+  var DAY = 86400000, base = Date.UTC(2026, 10, 9); /* Monday, Nov 9, 2026 */
+  var MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  var MONTHS = ['November', 'December'], MIDX = [10, 11];
+  var WDL = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  var WDS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  var weeks = 7;
+  cat = cat || 'All';
+  w = Math.max(0, Math.min(weeks - 1, w || 0));
+  m = Math.max(0, Math.min(MONTHS.length - 1, m || 0));
+  function ts(iso) { var p = iso.split('-'); return Date.UTC(+p[0], +p[1] - 1, +p[2]); }
+  var seen = {}, cats = ['All'];
+  EV.forEach(function (e) { if (!seen[e[3]]) { seen[e[3]] = 1; cats.push(e[3]); } });
+  var list = EV.filter(function (e) { return cat === 'All' || e[3] === cat; });
+  function card(e) {
+    var dt = new Date(ts(e[0]));
+    return { t: e[1], v: e[2], cat: e[3], photo: 'Event photo placeholder: ' + e[1],
+      dow: WDS[dt.getUTCDay()], day: String(dt.getUTCDate()), mon: MON[dt.getUTCMonth()],
+      date: WDL[dt.getUTCDay()] + ', ' + MON[dt.getUTCMonth()] + ' ' + dt.getUTCDate() };
+  }
+  var isWeek = view !== 'month', out = { isWeek: isWeek, isMonth: !isWeek, cat: cat, cats: cats };
+  var items;
+  if (isWeek) {
+    var start = base + w * 7 * DAY, end = start + 6 * DAY;
+    items = list.filter(function (e) { var t = ts(e[0]); return t >= start && t <= end; }).map(card);
+    var s0 = new Date(start), e0 = new Date(end);
+    out.label = MON[s0.getUTCMonth()] + ' ' + s0.getUTCDate() + ' – ' + (e0.getUTCMonth() !== s0.getUTCMonth() ? MON[e0.getUTCMonth()] + ' ' : '') + e0.getUTCDate();
+    out.canPrev = w > 0; out.canNext = w < weeks - 1;
+  } else {
+    items = list.filter(function (e) { return new Date(ts(e[0])).getUTCMonth() === MIDX[m]; }).map(card);
+    out.label = MONTHS[m] + ' 2026';
+    out.canPrev = m > 0; out.canNext = m < MONTHS.length - 1;
+  }
+  out.has = items.length > 0; out.none = !out.has;
+  out.featured = items[0] || card(['2026-11-09', '', '', '']);
+  out.rest = items.slice(1);
+  out.hasRest = out.rest.length > 0;
+  out.count = items.length === 1 ? '1 event' : items.length + ' events';
+  out.w = w; out.m = m;
+  return out;
+}
+class Component extends DCLogic {
+constructor(props) { super(props); this.state = { i: 0, h: 0, cv: 'week', cw: 0, cm: 0, cc: 'All', menu: false }; }
+renderVals() {
+var EV = [["2026-11-10","They Might Be Giants (night 1)","The Heights Theater","Music"],["2026-11-11","They Might Be Giants (night 2)","The Heights Theater","Music"],["2026-11-12","Tommy Castro & The Painkillers with GA-20","The Heights Theater","Music"],["2026-11-13","Trish Toledo with Los Tranquilos","The Heights Theater","Music"],["2026-11-14","Garrison Keillor Tonight","The Heights Theater","Talk"],["2026-11-15","On Cinema: Five Bags of Popcorn Tour","The Heights Theater","Comedy"],["2026-11-15","Emma Ogier with Harrison Whitford and Alysia Josephine","White Oak Music Hall","Music"],["2026-11-16","New Constellations: It Comes In Waves Tour","The Heights Theater","Music"],["2026-11-18","Tab Benoit with Jesse Dayton","The Heights Theater","Music"],["2026-11-19","North Mississippi Allstars","The Heights Theater","Music"],["2026-11-20","Bahamas with Sister Ray","The Heights Theater","Music"],["2026-11-22","Heights Mercantile Farmers Market","Heights Mercantile","Market"],["2026-11-24","King of Drag","White Oak Music Hall","Arts"],["2026-11-25","Ripe","The Heights Theater","Music"],["2026-11-27","The Reverend Horton Heat with Los Skarnales","The Heights Theater","Music"],["2026-11-28","Nacho Redondo: Terapia de Grupo","The Heights Theater","Comedy"],["2026-12-01","The Moth Houston GrandSLAM","The Heights Theater","Storytelling"],["2026-12-03","American Aquarium with David Wimbish","The Heights Theater","Music"],["2026-12-04","Hayes Carll: Grateful for Christmas (night 1)","The Heights Theater","Holiday"],["2026-12-05","22nd Annual Heights Holiday Market","935 Harvard St.","Holiday"],["2026-12-05","Hayes Carll: Grateful for Christmas (night 2)","The Heights Theater","Holiday"],["2026-12-06","The Milk Carton Kids Holiday Tour","The Heights Theater","Holiday"],["2026-12-06","Bella White","White Oak Music Hall","Music"],["2026-12-09","Futurebirds: Far Out Country Tour","The Heights Theater","Music"],["2026-12-09","Quiet Light","White Oak Music Hall","Music"],["2026-12-10","Joshua Ray Walker with John Baumann","The Heights Theater","Music"],["2026-12-12","Lights in the Heights","Woodland Heights (Highland, Omar and the esplanades)","Holiday"],["2026-12-12","Jack Ingram: Acoustic Holiday Tour","The Heights Theater","Holiday"],["2026-12-13","Heights Mercantile Farmers Market","Heights Mercantile","Market"],["2026-12-13","The Secret Sisters with Caleb Elliott","The Heights Theater","Music"],["2026-12-15","A John Waters Christmas","The Heights Theater","Holiday"],["2026-12-17","Alejandro Escovedo & The Electric Saints","The Heights Theater","Music"],["2026-12-19","The Lemon Twigs","The Heights Theater","Music"],["2026-12-21","Kat Edmonson: Have Your Merry Christmas With Me","The Heights Theater","Holiday"],["2026-12-27","Heights Mercantile Farmers Market","Heights Mercantile","Market"]];
+var cst = this.state, CM = calModel(EV, cst.cv, cst.cw, cst.cm, cst.cc), selfC = this;
+CM.weekSel = CM.isWeek ? 'true' : 'false'; CM.monthSel = CM.isMonth ? 'true' : 'false';
+CM.weekTab = "padding: 10px 18px; border-radius: 999px; border: 0; cursor: pointer; font: 700 12px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .16em; text-transform: uppercase; " + (CM.isWeek ? 'background: #A51F26; color: #FFFFFF' : 'background: transparent; color: #A51F26');
+CM.monthTab = "padding: 10px 18px; border-radius: 999px; border: 0; cursor: pointer; font: 700 12px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .16em; text-transform: uppercase; " + (CM.isMonth ? 'background: #A51F26; color: #FFFFFF' : 'background: transparent; color: #A51F26');
+CM.noRest = !CM.hasRest;
+CM.listStyle = CM.isMonth ? 'max-height: 620px; overflow-y: auto; padding-right: 6px' : '';
+CM.catBtns = CM.cats.map(function (c) { var on = c === CM.cat; return { name: c, on: on ? 'true' : 'false', pick: function () { selfC.setState({ cc: c }); }, style: "padding: 10px 16px; border-radius: 999px; cursor: pointer; font: 700 12px/1 'DM Sans', system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; " + (on ? 'background: #A51F26; color: #FFFFFF; border: 1.5px solid #A51F26' : 'background: transparent; color: #A51F26; border: 1.5px solid rgba(165,31,38,.35)') }; });
+CM.prevStyle = "width: 44px; height: 44px; border-radius: 999px; border: 1.5px solid #A51F26; background: #FFFFFF; color: #A51F26; display: grid; place-items: center; cursor: pointer; " + (CM.canPrev ? '' : 'opacity: .35; cursor: default');
+CM.nextStyle = "width: 44px; height: 44px; border-radius: 999px; border: 1.5px solid #A51F26; background: #FFFFFF; color: #A51F26; display: grid; place-items: center; cursor: pointer; " + (CM.canNext ? '' : 'opacity: .35; cursor: default');
+var HD = [{"name": "Houston Heights", "img": "assets/inline/x8.webp", "h": 117, "tag": "Where it all started: Victorian and Craftsman homes, the boulevard and 19th Street.", "pts": ["The Heights Boulevard esplanade", "19th Street shops and White Linen Night", "The MKT Trail at your door"], "photo": "Heights Boulevard", "facts": [{"k": "Schools", "v": "Heights High, Harvard Elementary"}, {"k": "Parks & trails", "v": "Donovan and Marmion parks, the MKT Trail"}, {"k": "Eat & drink", "v": "The Green Room, Hypsi, Angie\u2019s Pizza"}, {"k": "Homes", "v": "Victorian and Craftsman homes"}], "slug": "the-heights"}, {"name": "Norhill", "img": "assets/inline/x9.webp", "h": 135, "tag": "Bungalows in a city historic district, with esplanades down the middle.", "pts": ["Park-like Norhill Boulevard esplanades", "Proctor Plaza Park", "Dinosaurs on the esplanade at Christmas"], "photo": "Norhill bungalow", "facts": [{"k": "Schools", "v": "Browning and Field Elementary, Hogg Middle"}, {"k": "Parks & trails", "v": "Proctor Plaza, the Norhill esplanades"}, {"k": "Eat & drink", "v": "Studewood and 11th Street"}, {"k": "Homes", "v": "1920s bungalows in a historic district"}], "slug": "norhill"}, {"name": "Sunset Heights", "img": "assets/inline/x10.webp", "h": 161, "tag": "Classic bungalows, with lot rules that help keep them standing.", "pts": ["Sunset Heights Park", "North Main and Airline restaurants", "Neighbors who know each other\u2019s porches"], "photo": "Sunset Heights street", "facts": [{"k": "Schools", "v": "Field and Helms Elementary, Hamilton Middle"}, {"k": "Parks & trails", "v": "Sunset Heights Park"}, {"k": "Eat & drink", "v": "North Main and Airline, Shredders Pizza"}, {"k": "Homes", "v": "Bungalows on protected lot sizes"}], "slug": "sunset-heights"}, {"name": "Shady Acres", "img": "assets/inline/x11.webp", "h": 124, "tag": "Big wooded lots and newer homes on the west side of the Heights.", "pts": ["White Oak Bayou Greenway trails", "Coffee and errands on Durham and Shepherd", "Love Croissants\u2019 drive-through"], "photo": "Shady Acres trees", "facts": [{"k": "Schools", "v": "Sinclair and Love Elementary, Hamilton Middle"}, {"k": "Parks & trails", "v": "White Oak Bayou Greenway"}, {"k": "Eat & drink", "v": "Love Croissants, Sandoitchi, Paris Baguette"}, {"k": "Homes", "v": "Wooded lots and newer townhomes"}], "slug": "shady-acres"}, {"name": "Montie Beach & Brooke Smith", "img": "assets/inline/x12.webp", "h": 100, "tag": "A park-centered pocket on the eastern edge of the Greater Heights, inside the Loop.", "pts": ["Montie Beach Park\u2019s 23 acres, hill and gazebo", "About $2 million in park upgrades on the way", "Brooke Smith, a longtime Hispanic neighborhood with its own civic club"], "photo": "Montie Beach Park", "facts": [{"k": "Parks", "v": "Montie Beach Park, community garden planned"}, {"k": "Location", "v": "Inside the 610 Loop, east of the Heights"}, {"k": "Community", "v": "Its own civic club"}, {"k": "Schools", "v": "Check zoned HISD schools by address"}], "slug": "montie-beach"}];
+var hn = HD.length, hi = ((this.state.h % hn) + hn) % hn, hd = HD[hi];
+var P = [["Dan Rather", "The CBS Evening News anchor graduated from Reagan High, now Heights High, and lived in the Heights."], ["Mary Kay Ash", "The founder of Mary Kay Cosmetics graduated from Reagan High, now Heights High."], ["Red Adair", "The famous oil-well firefighter graduated from Reagan High, now Heights High."], ["Denton Cooley", "The pioneering heart surgeon graduated from Reagan High, now Heights High."], ["Martha Wong", "The former state representative and Houston council member lives in the Heights."], ["John Ross Palmer", "The painter calls the Heights home."], ["Sarah Golden", "The folk singer-songwriter was raised in the Heights."], ["Oscar Martin Carter", "He founded the Heights as its own town in 1891."], ["William G. Love", "He was the first mayor of Houston Heights."], ["William A. Wilson", "He platted Woodland Heights as a streetcar suburb."], ["William C. Hogg", "He developed Norhill and sold Proctor Plaza to the city for one dollar."]];
+var n = P.length, i = ((this.state.i % n) + n) % n, self = this;
+var p = P[i];
+return {
+stop: function (e) { e.preventDefault(); },
+cal: CM,
+menuOpen: !!this.state.menu, menuLabel: this.state.menu ? 'Close menu' : 'Open menu', toggleMenu: function () { self.setState({ menu: !self.state.menu }); }, closeMenu: function () { self.setState({ menu: false }); },
+showWeek: function () { self.setState({ cv: 'week' }); },
+showMonth: function () { self.setState({ cv: 'month' }); },
+calPrev: function () { if (CM.isWeek) self.setState({ cw: CM.w - 1 }); else self.setState({ cm: CM.m - 1 }); },
+calNext: function () { if (CM.isWeek) self.setState({ cw: CM.w + 1 }); else self.setState({ cm: CM.m + 1 }); },
+hood: { slug: hd.slug, facts: hd.facts, name: hd.name, img: hd.img, hasImg: !!hd.img, noImg: !hd.img, imgStyle: 'height: ' + hd.h + 'px; width: auto; max-width: 100%', tag: hd.tag, pts: hd.pts, photo: hd.photo, photoLabel: 'Photo placeholder: ' + hd.photo },
+hoodPrev: function () { self.setState({ h: hi - 1 }); },
+hoodNext: function () { self.setState({ h: hi + 1 }); },
+hoodTabs: HD.map(function (q, k) { return { name: q.name, img: q.img, hasImg: !!q.img, noImg: !q.img, sel: k === hi ? 'true' : 'false', pick: function () { self.setState({ h: k }); }, style: 'display: flex; align-items: center; justify-content: center; min-height: 64px; padding: 10px 18px; border-radius: 16px; cursor: pointer; background: ' + (k === hi ? '#FFFFFF' : 'transparent') + '; border: 1.5px solid ' + (k === hi ? '#A51F26' : '#E7B9A6') }; }),
+person: { name: p[0], line: p[1], photoLabel: 'Photo placeholder: ' + p[0] },
+prev: function () { self.setState({ i: i - 1 }); },
+next: function () { self.setState({ i: i + 1 }); },
+dots: P.map(function (q, k) { return { label: 'Show ' + q[0], pick: function () { self.setState({ i: k }); }, style: 'width: 12px; height: 12px; padding: 0; border-radius: 999px; cursor: pointer; border: 1.5px solid #FFBEA1; background: ' + (k === i ? '#FFBEA1' : 'transparent') }; })
+};
+}
+}
+
+window.__dcStart(Component);
+</script>
+<script>(function(){function init(){var ff=document.querySelector('#schools .ff');if(!ff)return;var svg=ff.querySelector('.ff-svg'),ns='http://www.w3.org/2000/svg',sel=null;
+function el(id){return ff.querySelector('.ff-n[data-id="'+id+'"]')}
+function edges(){var E=[];ff.querySelectorAll('.ff-n').forEach(function(n){(n.dataset.to||'').split(' ').filter(Boolean).forEach(function(t){E.push([n.dataset.id,t])})});return E}
+function path(id){var on={};on[id]=1;var E=edges(),ch=1;while(ch){ch=0;E.forEach(function(e){if(on[e[0]]&&!on[e[1]]){on[e[1]]=1;ch=1}if(on[e[1]]&&!on[e[0]]&&el(e[1]).classList.contains('ff-es')===false&&el(e[0]).classList.contains('ff-es')&&e[1]===id){on[e[0]]=1;ch=1}})}
+E.forEach(function(e){if(e[1]===id||(on[e[1]]&&el(id).classList.contains('ff-hs')))on[e[0]]=on[e[0]]||(e[1]===id)});
+if(el(id).classList.contains('ff-hs')||el(id).classList.contains('ff-ms')){var up=true;while(up){up=false;E.forEach(function(e){if(on[e[1]]&&!on[e[0]]&&(e[1]===id||el(e[1]).classList.contains('ff-ms'))){on[e[0]]=1;up=true}})}}return on}
+function draw(){var r=ff.getBoundingClientRect();svg.setAttribute('viewBox','0 0 '+r.width+' '+r.height);svg.innerHTML='';var on=sel?path(sel):null;edges().forEach(function(e){var a=el(e[0]).getBoundingClientRect(),b=el(e[1]).getBoundingClientRect();var x1=a.left+a.width/2-r.left,y1=a.bottom-r.top,x2=b.left+b.width/2-r.left,y2=b.top-r.top,my=(y1+y2)/2;var p=document.createElementNS(ns,'path');p.setAttribute('d','M'+x1+' '+y1+' C'+x1+' '+my+' '+x2+' '+my+' '+x2+' '+y2);var hit=!on||(on[e[0]]&&on[e[1]]);p.setAttribute('fill','none');var mid=/hogg/.test(e[0]+e[1])?'#2456D6':'#E16F4F';p.setAttribute('stroke',mid);p.setAttribute('stroke-linecap','round');p.setAttribute('stroke-width',hit&&on?4:2.4);p.setAttribute('stroke-opacity',hit?(on?1:.5):.07);svg.appendChild(p)});
+ff.querySelectorAll('.ff-n').forEach(function(n){var h=!on||on[n.dataset.id];n.style.opacity=h?1:.35;if(n.classList.contains('ff-hs'))return;var a=!!(on&&on[n.dataset.id]);var coral=n.dataset.id==='hamilton'||(/hamilton/.test(n.dataset.to)&&!/hogg/.test(n.dataset.to));n.classList.toggle('is-on',a&&!coral);n.classList.toggle('is-on-c',a&&coral)})}
+ff.querySelectorAll('.ff-n').forEach(function(n){n.addEventListener('click',function(){sel=sel===n.dataset.id?null:n.dataset.id;draw()});n.addEventListener('mouseenter',function(){if(!sel){sel=n.dataset.id;draw();sel=null}});n.addEventListener('mouseleave',function(){if(!sel)draw()})});
+draw();addEventListener('resize',draw);if(window.ResizeObserver)new ResizeObserver(draw).observe(ff);}if(document.querySelector('#schools .ff'))init();else{var t=0,iv=setInterval(function(){if(document.querySelector('#schools .ff')||++t>50){clearInterval(iv);init()}},100)}})();</script></body>
+</html>

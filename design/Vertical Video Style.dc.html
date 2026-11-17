@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_ds/organic-3bf144cd-0f77-4d21-b523-8671b888de01/styles.css">
+<script src="_ds/organic-3bf144cd-0f77-4d21-b523-8671b888de01/_ds_bundle.js"></script>
+<style>body{margin:0;background:#fff8ee;font-family:"Jost",system-ui,sans-serif;color:#742530}a{color:#2456D6}a:hover{color:#13296F}button:focus-visible{outline:2px solid #2456D6;outline-offset:2px}</style>
+</helmet>
+<div style="max-width:1240px;margin:0 auto;padding:clamp(32px,5vw,72px) clamp(20px,4vw,48px);box-sizing:border-box;display:flex;flex-direction:column;gap:48px">
+  <header style="display:flex;flex-direction:column;gap:12px;max-width:720px">
+    <a href="Video Templates.dc.html" style="font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-decoration:none">← All video templates</a>
+    <span style="font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#2456D6">Draper Real Estate · Video guide</span>
+    <h1 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(44px,6vw,80px);line-height:.95;letter-spacing:-.02em;color:#742530">Vertical video <span style="font-style:italic">style</span></h1>
+    <p style="margin:0;font-size:17px;line-height:1.6;color:#69443f;text-wrap:pretty">How every 9:16 video is laid out and animated: words on top, Lauren in the middle, pop-out images below.</p>
+  </header>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,5vw,72px);align-items:start">
+    <div style="display:flex;flex-direction:column;gap:20px;align-items:center">
+      <div aria-label="Video preview, 1080 by 1920" style="position:relative;width:432px;max-width:100%;aspect-ratio:9/16;border-radius:28px;overflow:hidden;background:#fff8ee;box-shadow:0 0 0 1px #eadccb,0 40px 80px -50px rgba(116,37,48,.45);container-type:inline-size">
+                <img src="img/bonnet-a.webp" alt="" aria-hidden="true" style="position:absolute;left:-3cqw;top:86cqw;width:22cqw;max-width:none;height:auto;opacity:.95">
+        <img src="img/bonnet-b.webp" alt="" aria-hidden="true" style="position:absolute;right:-3cqw;top:80cqw;width:22cqw;max-width:none;height:auto;transform:scaleX(-1);opacity:.95">
+        <img src="img/skyline-strip-red.png" alt="" aria-hidden="true" style="position:absolute;left:8cqw;bottom:-1cqw;width:84cqw;max-width:none;height:auto;opacity:.2">
+        <span style="position:absolute;left:0;right:0;bottom:27cqw;text-align:center;font-size:2.8cqw;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:#2456D6">The Heights · Houston, TX</span>
+        <div style="position:absolute;left:50%;bottom:33cqw;transform:translateX(-50%);z-index:3;padding:0;border-radius:999px;background:transparent;line-height:0"><img src="img/draper-logo.png" alt="Draper Real Estate" style="width:46cqw;max-width:none;height:auto"></div>
+        <div style="position:absolute;left:0;right:0;top:5cqw;height:24cqw;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:2.2cqw;padding:0 8cqw;text-align:center;opacity:{{ capOpacity }};transform:{{ capTransform }}">
+          <span style="font-size:3cqw;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:#2456D6">{{ eyebrow }}</span>
+          <p style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:8.4cqw;line-height:1;letter-spacing:-.01em;text-wrap:balance;display:flex;flex-wrap:wrap;justify-content:center;column-gap:.24em">
+            <sc-for list="{{ words }}" as="wd" hint-placeholder-count="4"><span style="color:{{ wd.color }};opacity:{{ wd.opacity }};background:{{ wd.bg }};border-radius:.2em;padding:0 .08em;margin:0 -.08em">{{ wd.w }}</span></sc-for>
+          </p>
+        </div>
+
+        <div style="position:absolute;left:18cqw;right:18cqw;top:32cqw;height:90cqw;border-radius:999px 999px 6cqw 6cqw;overflow:hidden;background:#2456D6;opacity:{{ boxOpacity }};transform:{{ boxTransform }};box-shadow:0 0 0 1.4cqw #fff8ee,0 0 0 1.8cqw #2456D6">
+          <div aria-label="Vertical video area" style="position:absolute;inset:2.4cqw;border:0.6cqw dashed #fff8ee;border-radius:999px 999px 4cqw 4cqw;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6cqw;text-align:center;color:#fff8ee;background:#1B3A9E">
+            <span style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:6cqw;line-height:1">Lauren’s video</span>
+            <span style="font-size:2.6cqw;font-weight:500;letter-spacing:.2em;text-transform:uppercase">Vertical · 9:16 footage</span>
+          </div>
+        </div>
+
+        <div style="position:absolute;left:7cqw;right:7cqw;top:97cqw;height:30cqw;z-index:2">
+          <sc-for list="{{ pops }}" as="p" hint-placeholder-count="0">
+            <div style="position:absolute;left:{{ p.left }};top:{{ p.top }};width:{{ p.width }};height:{{ p.height }};z-index:{{ p.z }};border-radius:{{ p.radius }};overflow:hidden;background:#f1e4d4;box-shadow:0 0 0 1cqw #fff8ee,0 0 0 1.5cqw #2456D6,0 3cqw 6cqw -3cqw rgba(19,41,111,.45);opacity:{{ p.opacity }};transform:{{ p.transform }}">
+              <img src="{{ p.src }}" alt="{{ p.alt }}" style="width:100%;height:100%;object-fit:cover;display:block">
+            </div>
+          </sc-for>
+        </div>
+
+        <div aria-hidden="true" style="position:absolute;inset:0;z-index:6;pointer-events:none;background:#fff8ee;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5cqw;opacity:{{ introOpacity }}">
+          <img src="img/draper-logo.png" alt="" style="width:74cqw;max-width:none;height:auto;transform:{{ introLogo }}">
+          <span style="font-size:3.6cqw;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:#2456D6;opacity:{{ introText }}">Houston, Texas</span>
+          <img src="img/illo-bluebonnets.png" alt="" style="position:absolute;left:-4cqw;bottom:-12cqw;width:108cqw;max-width:none;height:auto">
+        </div>
+        <sc-if value="{{ safe }}" hint-placeholder-val="{{ false }}">
+          <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none">
+            <div style="position:absolute;left:0;right:0;top:0;height:5cqw;background:repeating-linear-gradient(45deg,rgba(212,42,42,.22) 0 1cqw,transparent 1cqw 2cqw)"></div>
+            <div style="position:absolute;left:0;right:0;bottom:0;height:13cqw;background:repeating-linear-gradient(45deg,rgba(212,42,42,.22) 0 1cqw,transparent 1cqw 2cqw)"></div>
+            <div style="position:absolute;right:0;top:90cqw;bottom:13cqw;width:13cqw;background:repeating-linear-gradient(45deg,rgba(212,42,42,.22) 0 1cqw,transparent 1cqw 2cqw)"></div>
+            <span style="position:absolute;left:3cqw;bottom:4cqw;font-size:2.6cqw;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#d42a2a">App UI covers this</span>
+          </div>
+        </sc-if>
+      </div>
+
+      <div style="width:432px;max-width:100%;display:flex;flex-direction:column;gap:12px">
+        <div style="position:relative;height:8px;border-radius:999px;background:#f1e4d4;cursor:pointer" onClick="{{ seek }}">
+          <div style="position:absolute;left:0;top:0;bottom:0;border-radius:999px;background:#2456D6;width:{{ progress }}"></div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+          <div style="display:flex;gap:8px">
+            <button type="button" onClick="{{ toggle }}" style="height:44px;padding:0 20px;border-radius:999px;border:0;background:#2456D6;color:#fff;font:500 12px/1 'Jost',system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer">{{ playLabel }}</button>
+            <button type="button" onClick="{{ restart }}" style="height:44px;padding:0 20px;border-radius:999px;border:1.5px solid #2456D6;background:transparent;color:#2456D6;font:500 12px/1 'Jost',system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer">Restart</button>
+          </div>
+          <span style="font-size:14px;font-variant-numeric:tabular-nums;color:#69443f">{{ clock }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:40px;min-width:0">
+      <section style="display:flex;flex-direction:column;gap:20px">
+        <h2 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:36px;line-height:1;color:#742530">Three zones</h2>
+        <div style="display:flex;flex-direction:column;gap:0;border-top:1.5px solid #742530">
+          <div style="display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px;padding:18px 0;border-bottom:1px solid #eadccb">
+            <span style="width:36px;height:36px;border-radius:999px;background:#fff1dc;color:#2456D6;display:grid;place-items:center;font-weight:600">1</span>
+            <div style="display:flex;flex-direction:column;gap:6px"><h3 style="margin:0;font-size:17px;font-weight:600;color:#742530">Words, top</h3><p style="margin:0;font-size:15px;line-height:1.55;color:#69443f">Subtitles and titles live here, never over Lauren’s face. Cormorant Garamond 600, about 90px on a 1080-wide frame, centered, two lines max. Small Jost label above in bluebonnet.</p><span style="font-size:13px;color:#83645e">y 55–315px</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px;padding:18px 0;border-bottom:1px solid #eadccb">
+            <span style="width:36px;height:36px;border-radius:999px;background:#fff1dc;color:#2456D6;display:grid;place-items:center;font-weight:600">2</span>
+            <div style="display:flex;flex-direction:column;gap:6px"><h3 style="margin:0;font-size:17px;font-weight:600;color:#742530">Lauren, middle</h3><p style="margin:0;font-size:15px;line-height:1.55;color:#69443f">A tall arched box, 690 × 970px, with a cream gap and a thin bluebonnet ring. The footage sits inside and drifts slowly so the frame never feels static.</p><span style="font-size:13px;color:#83645e">y 345–1320px</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px;padding:18px 0;border-bottom:1px solid #eadccb">
+            <span style="width:36px;height:36px;border-radius:999px;background:#fff1dc;color:#2456D6;display:grid;place-items:center;font-weight:600">3</span>
+            <div style="display:flex;flex-direction:column;gap:6px"><h3 style="margin:0;font-size:17px;font-weight:600;color:#742530">Pop-outs, bottom</h3><p style="margin:0;font-size:15px;line-height:1.55;color:#69443f">One spotlight photo pops up large in the center, then shrinks into the middle of a three-photo grid as the other two pop in beside it. Below them sits the Draper logo, then “The Heights · Houston, TX” in small bluebonnet caps, with the red Houston skyline along the very bottom.</p><span style="font-size:13px;color:#83645e">y 1050–1375px</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section style="display:flex;flex-direction:column;gap:20px">
+        <h2 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:36px;line-height:1;color:#742530">Motion</h2>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <sc-for list="{{ cues }}" as="c" hint-placeholder-count="5">
+            <div style="display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;align-items:center">
+              <span style="font-size:13px;font-weight:500;color:#742530">{{ c.label }}</span>
+              <div style="position:relative;height:22px;border-radius:999px;background:#f3e8dc">
+                <div style="position:absolute;top:0;bottom:0;border-radius:999px;background:{{ c.color }};left:{{ c.left }};width:{{ c.width }}"></div>
+                <div style="position:absolute;top:-4px;bottom:-4px;width:2px;background:#742530;left:{{ playhead }}"></div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <ul style="margin:0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:8px;font-size:15px;line-height:1.55;color:#69443f">
+          <li>Intro, 0–2s: the Draper Real Estate logo settles in from 90% on cream with “Houston, Texas” below, then fades out over 0.5s to reveal the scene.</li>
+          <li>Lauren’s box rises 80px and settles in 0.8s, ease-out.</li>
+          <li>Words appear one line at a time; oxblood type on cream, the spoken word sits on a bluebonnet highlight in cream and upcoming words wait at 40%.</li>
+          <li>The spotlight scales up from 60% with a small overshoot (0.6s), holds for about 2s, then glides into the center grid slot (0.6s). The side photos pop in 0.3s apart. All three drop out together.</li>
+          <li>Everything moves straight up, down or in scale. Nothing tilts or spins.</li>
+        </ul>
+      </section>
+
+      <section style="display:flex;flex-direction:column;gap:16px">
+        <h2 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:36px;line-height:1;color:#742530">Colors</h2>
+        <div style="display:flex;flex-wrap:wrap;gap:16px">
+          <div style="display:flex;align-items:center;gap:10px"><span style="width:36px;height:36px;border-radius:999px;background:#fff8ee;box-shadow:inset 0 0 0 1px #eadccb"></span><span style="font-size:14px">Cream #FFF8EE</span></div>
+          <div style="display:flex;align-items:center;gap:10px"><span style="width:36px;height:36px;border-radius:999px;background:#fff8ee;box-shadow:inset 0 0 0 1px #eadccb"></span><span style="font-size:14px">Cream (video ground) #FFF8EE</span></div>
+          <div style="display:flex;align-items:center;gap:10px"><span style="width:36px;height:36px;border-radius:999px;background:#742530"></span><span style="font-size:14px">Oxblood #742530</span></div>
+          <div style="display:flex;align-items:center;gap:10px"><span style="width:36px;height:36px;border-radius:999px;background:#2456D6"></span><span style="font-size:14px">Bluebonnet #2456D6</span></div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showSafeZones&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Preview&quot;},&quot;captionMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Word highlight&quot;,&quot;Line fade&quot;],&quot;default&quot;:&quot;Word highlight&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Words&quot;},&quot;popoutCount&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;min&quot;:1,&quot;max&quot;:3,&quot;default&quot;:3,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Pop-outs&quot;}}">
+class Component extends DCLogic {
+  state = { t: 0, playing: true };
+  D = 14;
+  lines = [
+    { a: 0.6, b: 3.6, eye: "Hi, I'm Lauren", text: "Welcome to the Heights." },
+    { a: 3.6, b: 6.8, eye: "Buying", text: "Here’s what I look for first." },
+    { a: 6.8, b: 10, eye: "Tip", text: "Walk the block before you tour." },
+    { a: 10, b: 12, eye: "Draper Real Estate", text: "Let’s find your home." }
+  ];
+  popsData = [
+    { src: "img/valuation-street.jpg", alt: "Street" },
+    { src: "img/article-market.jpg", alt: "Market" },
+    { src: "img/icon-bungalow.webp", alt: "Bungalow" }
+  ];
+  componentDidMount() {
+    const saved = parseFloat(localStorage.getItem("vvs-t"));
+    if (!isNaN(saved)) this.setState({ t: saved % this.D });
+    let last = performance.now();
+    const tick = now => {
+      const dt = (now - last) / 1000; last = now;
+      if (this.state.playing) {
+        const t = (this.state.t + dt) % this.D;
+        this.setState({ t });
+        if (Math.floor(t * 4) !== this._s) { this._s = Math.floor(t * 4); localStorage.setItem("vvs-t", t.toFixed(2)); }
+      }
+      this.raf = requestAnimationFrame(tick);
+    };
+    this.raf = requestAnimationFrame(tick);
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); }
+  renderVals() {
+    const T = this.state.t, D = this.D, I = 2, t = T - I;
+    const cl = x => Math.max(0, Math.min(1, x));
+    const out = x => 1 - Math.pow(1 - x, 3);
+    const back = x => { const c = 1.7; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+    const mode = this.props.captionMode ?? "Word highlight";
+    const count = this.props.popoutCount ?? 3;
+
+    const bx = out(cl(t / 0.8));
+    const line = this.lines.find(l => t >= l.a && t < l.b);
+    let words = [], capOpacity = 0, capTransform = "translateY(20px)", eyebrow = "";
+    if (line) {
+      const p = out(cl((t - line.a) / 0.4)), q = cl((line.b - t) / 0.25);
+      capOpacity = Math.min(p, q); capTransform = `translateY(${(1 - p) * 20}px)`; eyebrow = line.eye;
+      const ws = line.text.split(" "), span = (line.b - line.a) * 0.7;
+      words = ws.map((w, i) => {
+        const on = t >= line.a + 0.2 + (i / ws.length) * span;
+        const cur = on && (i === ws.length - 1 || t < line.a + 0.2 + ((i + 1) / ws.length) * span);
+        if (mode === "Line fade") return { w, color: "#742530", opacity: 1, bg: "transparent" };
+        return { w, color: cur ? "#fff8ee" : "#742530", opacity: on ? 1 : 0.3, bg: cur ? "#2456D6" : "transparent" };
+      });
+    }
+    const W = 86, G = 3, sw = (W - G * (count - 1)) / count, mid = Math.floor((count - 1) / 2);
+    const spot = { l: -2, t: -34, w: W + 4, h: 60, rad: 6 };
+    const others = this.popsData.slice(1, count);
+    const order = [];
+    for (let i = 0, o = 0; i < count; i++) order.push(i === mid ? { ...this.popsData[0], spot: true } : { ...others[o++], k: o });
+    const outP = out(cl((t - 10.1) / 0.4));
+    const pops = order.map((d, i) => {
+      const cs = Math.min(sw, 30);
+      const slot = { l: i * (sw + G) + (sw - cs) / 2, t: (30 - cs) / 2, w: cs, h: cs, rad: cs / 2 };
+      let inP, r, z = 1;
+      if (d.spot) {
+        inP = cl((t - 3.4) / 0.6);
+        const m = count > 1 ? out(cl((t - 5.8) / 0.6)) : 0;
+        r = { l: spot.l + (slot.l - spot.l) * m, t: spot.t + (slot.t - spot.t) * m, w: spot.w + (slot.w - spot.w) * m, h: spot.h + (slot.h - spot.h) * m, rad: spot.rad + (slot.rad - spot.rad) * m };
+        z = 3;
+      } else {
+        inP = cl((t - (6.1 + (d.k - 1) * 0.3)) / 0.6);
+        r = slot;
+      }
+      const sc = 0.6 + 0.4 * back(inP);
+      return { ...d, z, radius: r.rad + "cqw", left: r.l + "cqw", top: r.t + "cqw", width: r.w + "cqw", height: r.h + "cqw",
+        opacity: Math.min(cl(inP * 3), 1 - outP), transform: `translateY(${(1 - out(inP)) * 40 + outP * 60}px) scale(${inP ? sc : 0.6})` };
+    });
+    const pct = x => (x / D * 100).toFixed(2) + "%";
+    const cues = [
+      { label: "Intro", a: -I, b: 0.1, color: "#d42a2a" },
+      { label: "Lauren box", a: 0, b: 0.8, color: "#2456D6" },
+      { label: "Words", a: 0.6, b: 12, color: "#742530" },
+      { label: "Spotlight", a: 3.4, b: 5.8, color: "#2456D6" },
+      { label: "Grid", a: 5.8, b: 10.5, color: "#C9D6F7" }
+    ].slice(0, count > 1 ? 5 : 4).map(c => ({ ...c, left: pct(c.a + I), width: pct(c.b - c.a) }));
+    const dr = T / D;
+    return {
+      eyebrow, words, capOpacity, capTransform, pops, cues,
+      boxOpacity: bx, boxTransform: `translateY(${(1 - bx) * 80}px) scale(${0.94 + 0.06 * bx})`,
+      bgPos: `50% ${30 + dr * 30}%`, bgScale: `scale(${1.04 + dr * 0.08})`,
+      safe: !!this.props.showSafeZones,
+      progress: pct(T), playhead: pct(T),
+      clock: `0:${String(Math.floor(T)).padStart(2, "0")} / 0:${D}`,
+      introOpacity: 1 - out(cl((T - 1.6) / 0.5)),
+      introLogo: `scale(${0.9 + 0.1 * out(cl(T / 0.7))})`,
+      introText: out(cl((T - 0.4) / 0.5)),
+      playLabel: this.state.playing ? "Pause" : "Play",
+      toggle: () => this.setState(s => ({ playing: !s.playing })),
+      restart: () => this.setState({ t: 0, playing: true }),
+      seek: e => { const r = e.currentTarget.getBoundingClientRect(); this.setState({ t: cl((e.clientX - r.left) / r.width) * D * 0.999 }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

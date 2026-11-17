@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_ds/organic-3bf144cd-0f77-4d21-b523-8671b888de01/styles.css">
+<script src="_ds/organic-3bf144cd-0f77-4d21-b523-8671b888de01/_ds_bundle.js"></script>
+<style>body{margin:0;background:#fff8ee;font-family:"Jost",system-ui,sans-serif;color:#742530}a{color:#2456D6}a:hover{color:#13296F}button:focus-visible{outline:2px solid #2456D6;outline-offset:2px}</style>
+</helmet>
+<div style="max-width:1240px;margin:0 auto;padding:clamp(32px,5vw,72px) clamp(20px,4vw,48px);box-sizing:border-box;display:flex;flex-direction:column;gap:48px">
+  <header style="display:flex;flex-direction:column;gap:12px;max-width:720px">
+    <a href="Video Templates.dc.html" style="font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-decoration:none">← All video templates</a>
+    <span style="font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#2456D6">Draper Real Estate · Video guide</span>
+    <h1 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(44px,6vw,80px);line-height:.95;letter-spacing:-.02em;color:#742530">Neighborhood tour <span style="font-style:italic">template</span></h1>
+    <p style="margin:0;font-size:17px;line-height:1.6;color:#69443f;text-wrap:pretty">A 26-second 9:16 walk through one neighborhood. The hand-lettered name opens it, five stops play in the arch, a trail below tracks where you are, and Lauren closes it out.</p>
+  </header>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,5vw,72px);align-items:start">
+    <div style="display:flex;flex-direction:column;gap:20px;align-items:center">
+      <div aria-label="Neighborhood tour preview, 1080 by 1920" style="position:relative;width:432px;max-width:100%;aspect-ratio:9/16;border-radius:28px;overflow:hidden;background:#fff8ee;box-shadow:0 0 0 1px #eadccb,0 40px 80px -50px rgba(116,37,48,.45);container-type:inline-size">
+        <img src="img/bonnet-a.webp" alt="" aria-hidden="true" style="position:absolute;left:-3cqw;top:86cqw;width:22cqw;max-width:none;height:auto;opacity:.95">
+        <img src="img/bonnet-b.webp" alt="" aria-hidden="true" style="position:absolute;right:-3cqw;top:80cqw;width:22cqw;max-width:none;height:auto;transform:scaleX(-1);opacity:.95">
+        <img src="img/skyline-strip-red.png" alt="" aria-hidden="true" style="position:absolute;left:8cqw;bottom:-1cqw;width:84cqw;max-width:none;height:auto;opacity:.2">
+        <span style="position:absolute;left:0;right:0;bottom:27cqw;text-align:center;font-size:2.8cqw;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:#2456D6">The Heights · Houston, TX</span>
+        <div style="position:absolute;left:50%;bottom:33cqw;transform:translateX(-50%);z-index:3;line-height:0"><img src="img/draper-logo.png" alt="Draper Real Estate" style="width:46cqw;max-width:none;height:auto"></div>
+
+        <div style="position:absolute;left:0;right:0;top:5cqw;height:24cqw;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:2.2cqw;padding:0 8cqw;text-align:center;opacity:{{ capOpacity }};transform:{{ capTransform }}">
+          <span style="font-size:3cqw;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:#2456D6">{{ eyebrow }}</span>
+          <sc-if value="{{ showScript }}" hint-placeholder-val="{{ false }}">
+            <img src="{{ scriptSrc }}" alt="{{ name }}" style="width:70cqw;max-width:none;height:15cqw;object-fit:contain;display:block">
+          </sc-if>
+          <sc-if value="{{ showWords }}" hint-placeholder-val="{{ true }}">
+            <p style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:8.4cqw;line-height:1;letter-spacing:-.01em;text-wrap:balance;display:flex;flex-wrap:wrap;justify-content:center;column-gap:.24em">
+              <sc-for list="{{ words }}" as="wd" hint-placeholder-count="4"><span style="color:{{ wd.color }};opacity:{{ wd.opacity }};background:{{ wd.bg }};border-radius:.2em;padding:0 .08em;margin:0 -.08em">{{ wd.w }}</span></sc-for>
+            </p>
+          </sc-if>
+        </div>
+
+        <div style="position:absolute;left:18cqw;right:18cqw;top:32cqw;height:90cqw;border-radius:999px 999px 6cqw 6cqw;overflow:hidden;background:#2456D6;opacity:{{ boxOpacity }};transform:{{ boxTransform }};box-shadow:0 0 0 1.4cqw #fff8ee,0 0 0 1.8cqw #2456D6">
+          <sc-for list="{{ shots }}" as="s" hint-placeholder-count="1">
+            <div aria-label="{{ s.label }} footage area" style="position:absolute;inset:2.4cqw;border:0.6cqw dashed #fff8ee;border-radius:999px 999px 4cqw 4cqw;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6cqw;text-align:center;color:#fff8ee;background:{{ s.bg }};opacity:{{ s.opacity }}">
+              <span style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:6cqw;line-height:1;transform:{{ s.zoom }}">{{ s.label }}</span>
+              <span style="font-size:2.6cqw;font-weight:500;letter-spacing:.2em;text-transform:uppercase">{{ s.kind }}</span>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="position:absolute;left:7cqw;right:7cqw;top:97cqw;height:30cqw;z-index:2">
+          <div style="position:absolute;left:7cqw;right:7cqw;top:14.6cqw;border-top:0.6cqw dashed #2456D6;opacity:{{ trailOpacity }}"></div>
+          <sc-for list="{{ stops }}" as="p" hint-placeholder-count="0">
+            <div style="position:absolute;left:{{ p.left }};top:8cqw;width:14cqw;height:14cqw;border-radius:999px;background:{{ p.fill }};box-shadow:0 0 0 1cqw #fff8ee,0 0 0 1.5cqw #2456D6,0 3cqw 6cqw -3cqw rgba(19,41,111,.45);display:flex;align-items:center;justify-content:center;opacity:{{ p.opacity }};transform:{{ p.transform }}">
+              <span style="font-size:1.9cqw;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:{{ p.ink }};text-align:center;line-height:1.1">{{ p.short }}</span>
+            </div>
+          </sc-for>
+          <div aria-label="Lauren outro clip area" style="position:absolute;left:26cqw;top:-2cqw;width:34cqw;height:34cqw;border-radius:999px;background:#1B3A9E;box-shadow:0 0 0 1cqw #fff8ee,0 0 0 1.5cqw #2456D6;display:flex;align-items:center;justify-content:center;opacity:{{ laurenOpacity }};transform:{{ laurenTransform }}">
+            <div style="position:absolute;inset:2cqw;border:0.6cqw dashed #fff8ee;border-radius:999px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1cqw;color:#fff8ee;text-align:center">
+              <span style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:5cqw;line-height:1">Lauren</span>
+              <span style="font-size:2.2cqw;font-weight:500;letter-spacing:.2em;text-transform:uppercase">Outro clip</span>
+            </div>
+          </div>
+        </div>
+
+        <div aria-hidden="true" style="position:absolute;inset:0;z-index:6;pointer-events:none;background:#fff8ee;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5cqw;opacity:{{ introOpacity }}">
+          <span style="font-size:3.6cqw;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:#2456D6;opacity:{{ introText }}">Neighborhood tour</span>
+          <img src="img/draper-logo.png" alt="" style="width:74cqw;max-width:none;height:auto;transform:{{ introLogo }}">
+          <img src="img/illo-bluebonnets.png" alt="" style="position:absolute;left:-4cqw;bottom:-12cqw;width:108cqw;max-width:none;height:auto">
+        </div>
+        <sc-if value="{{ safe }}" hint-placeholder-val="{{ false }}">
+          <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;z-index:7">
+            <div style="position:absolute;left:0;right:0;top:0;height:5cqw;background:repeating-linear-gradient(45deg,rgba(212,42,42,.22) 0 1cqw,transparent 1cqw 2cqw)"></div>
+            <div style="position:absolute;left:0;right:0;bottom:0;height:13cqw;background:repeating-linear-gradient(45deg,rgba(212,42,42,.22) 0 1cqw,transparent 1cqw 2cqw)"></div>
+            <div style="position:absolute;right:0;top:90cqw;bottom:13cqw;width:13cqw;background:repeating-linear-gradient(45deg,rgba(212,42,42,.22) 0 1cqw,transparent 1cqw 2cqw)"></div>
+            <span style="position:absolute;left:3cqw;bottom:4cqw;font-size:2.6cqw;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#d42a2a">App UI covers this</span>
+          </div>
+        </sc-if>
+      </div>
+
+      <div style="width:432px;max-width:100%;display:flex;flex-direction:column;gap:12px">
+        <div style="position:relative;height:8px;border-radius:999px;background:#f1e4d4;cursor:pointer" onClick="{{ seek }}">
+          <div style="position:absolute;left:0;top:0;bottom:0;border-radius:999px;background:#2456D6;width:{{ progress }}"></div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+          <div style="display:flex;gap:8px">
+            <button type="button" onClick="{{ toggle }}" style="height:44px;padding:0 20px;border-radius:999px;border:0;background:#2456D6;color:#fff;font:500 12px/1 'Jost',system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer">{{ playLabel }}</button>
+            <button type="button" onClick="{{ restart }}" style="height:44px;padding:0 20px;border-radius:999px;border:1.5px solid #2456D6;background:transparent;color:#2456D6;font:500 12px/1 'Jost',system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer">Restart</button>
+          </div>
+          <span style="font-size:14px;font-variant-numeric:tabular-nums;color:#69443f">{{ clock }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:40px;min-width:0">
+      <section style="display:flex;flex-direction:column;gap:20px">
+        <h2 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:36px;line-height:1;color:#742530">Shot list</h2>
+        <div style="display:flex;flex-direction:column;border-top:1.5px solid #742530">
+          <sc-for list="{{ shotList }}" as="r" hint-placeholder-count="8">
+            <div style="display:grid;grid-template-columns:72px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid #eadccb;opacity:{{ r.dim }}">
+              <span style="font-size:13px;font-weight:500;font-variant-numeric:tabular-nums;color:#2456D6;padding-top:2px">{{ r.time }}</span>
+              <div style="display:flex;flex-direction:column;gap:4px"><h3 style="margin:0;font-size:16px;font-weight:600;color:#742530">{{ r.title }}</h3><p style="margin:0;font-size:15px;line-height:1.5;color:#69443f">{{ r.note }}</p></div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <section style="display:flex;flex-direction:column;gap:20px">
+        <h2 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:36px;line-height:1;color:#742530">Motion</h2>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <sc-for list="{{ cues }}" as="c" hint-placeholder-count="6">
+            <div style="display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;align-items:center">
+              <span style="font-size:13px;font-weight:500;color:#742530">{{ c.label }}</span>
+              <div style="position:relative;height:22px;border-radius:999px;background:#f3e8dc">
+                <div style="position:absolute;top:0;bottom:0;border-radius:999px;background:{{ c.color }};left:{{ c.left }};width:{{ c.width }}"></div>
+                <div style="position:absolute;top:-4px;bottom:-4px;width:2px;background:#742530;left:{{ playhead }}"></div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <ul style="margin:0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:8px;font-size:15px;line-height:1.55;color:#69443f">
+          <li>The hand-lettered neighborhood name fades up in the word zone over the establishing shot.</li>
+          <li>The trail draws in below the arch: five circles on a dashed bluebonnet line, popping in 0.15s apart.</li>
+          <li>The current stop fills bluebonnet and grows to 120%; stops already visited stay filled at full size.</li>
+          <li>Each stop holds about 3.4 seconds and crossfades over 0.5s with a slow push-in.</li>
+          <li>For the close, the trail drops away and Lauren’s round clip pops up in its place. Nothing tilts or spins.</li>
+        </ul>
+      </section>
+
+      <section style="display:flex;flex-direction:column;gap:12px">
+        <h2 style="margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:36px;line-height:1;color:#742530">Filming notes</h2>
+        <ul style="margin:0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:8px;font-size:15px;line-height:1.55;color:#69443f">
+          <li>Open on a street sign, an esplanade or a long view down a block.</li>
+          <li>Film each stop vertically with the subject in the middle 690px. Ask before filming inside a business.</li>
+          <li>Lauren’s outro is a 3–4 second clip, framed head and shoulders, ideally filmed in the same neighborhood.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;neighborhood&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Houston Heights&quot;,&quot;Norhill&quot;,&quot;Timbergrove&quot;,&quot;Lazybrook&quot;,&quot;Montie Beach&quot;],&quot;default&quot;:&quot;Houston Heights&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Tour&quot;},&quot;showSafeZones&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Preview&quot;}}">
+class Component extends DCLogic {
+  state = { t: 0, playing: true };
+  D = 26;
+  componentDidMount() {
+    const saved = parseFloat(localStorage.getItem("ntt-t"));
+    if (!isNaN(saved)) this.setState({ t: saved % this.D });
+    let last = performance.now();
+    const tick = now => {
+      const dt = Math.min(0.1, (now - last) / 1000); last = now;
+      if (this.state.playing) {
+        const t = (this.state.t + dt) % this.D;
+        this.setState({ t });
+        if (Math.floor(t * 4) !== this._s) { this._s = Math.floor(t * 4); localStorage.setItem("ntt-t", t.toFixed(2)); }
+      }
+      this.raf = requestAnimationFrame(tick);
+    };
+    this.raf = requestAnimationFrame(tick);
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); }
+  renderVals() {
+    const T = this.state.t, D = this.D, I = 2, t = T - I;
+    const cl = x => Math.max(0, Math.min(1, x));
+    const out = x => 1 - Math.pow(1 - x, 3);
+    const back = x => { const c = 1.7; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+    const SCRIPTS = { "Houston Heights": "img/script-houston-heights.png", "Norhill": "img/script-norhill.png", "Timbergrove": "img/script-timbergrove.png", "Lazybrook": "img/script-lazybrook.png", "Montie Beach": "img/script-montie-beach.png" };
+    const name = this.props.neighborhood ?? "Houston Heights";
+    const scriptSrc = SCRIPTS[name] || SCRIPTS["Houston Heights"];
+
+    const segs = [
+      { a: 0, b: 3.6, label: name, kind: "Establishing shot", bg: "#1B3A9E", eye: "A walk through", script: true },
+      { a: 3.6, b: 7, label: "Morning coffee", short: "Coffee", kind: "Stop footage", bg: "#13296F", eye: "Morning coffee", text: "Start at the corner café." },
+      { a: 7, b: 10.4, label: "The park", short: "Park", kind: "Stop footage", bg: "#1B3A9E", eye: "The park", text: "Shade, trails and a playground." },
+      { a: 10.4, b: 13.8, label: "Lunch", short: "Lunch", kind: "Stop footage", bg: "#13296F", eye: "Lunch", text: "A neighborhood favorite." },
+      { a: 13.8, b: 17.2, label: "The streets", short: "Streets", kind: "Stop footage", bg: "#1B3A9E", eye: "The streets", text: "Porches, oaks and bungalows." },
+      { a: 17.2, b: 20.4, label: "Schools", short: "Schools", kind: "Stop footage", bg: "#13296F", eye: "Schools", text: "Walk to school." },
+      { a: 20.4, b: 24, label: "Schools", kind: "Stop footage", bg: "#13296F", eye: "Thinking about " + name + "?", text: "Let’s take a walk.", outro: true }
+    ];
+    const seg = segs.find(s => t >= s.a && t < s.b);
+    const bx = out(cl(t / 0.8));
+
+    let words = [], capOpacity = 0, capTransform = "translateY(20px)", eyebrow = "", showScript = false, showWords = true;
+    if (seg) {
+      const a = seg.script ? 0.6 : seg.a;
+      const p = out(cl((t - a) / 0.4)), q = cl((seg.b - t) / 0.25);
+      capOpacity = Math.min(p, q); capTransform = `translateY(${(1 - p) * 20}px)`; eyebrow = seg.eye;
+      showScript = !!seg.script; showWords = !seg.script;
+      if (!seg.script) {
+        const ws = seg.text.split(" "), span = (seg.b - seg.a) * 0.7;
+        words = ws.map((w, i) => {
+          const on = t >= seg.a + 0.2 + (i / ws.length) * span;
+          const cur = on && (i === ws.length - 1 || t < seg.a + 0.2 + ((i + 1) / ws.length) * span);
+          return { w, color: cur ? "#fff8ee" : "#742530", opacity: on ? 1 : 0.3, bg: cur ? "#2456D6" : "transparent" };
+        });
+      }
+    }
+
+    const footage = segs.slice(0, 6).map((s, i, arr) => ({ ...s, b: i === arr.length - 1 ? 24 : s.b }));
+    const shots = footage.map((r, i) => {
+      const fin = i === 0 ? 1 : out(cl((t - r.a + 0.25) / 0.5));
+      const fo = i === footage.length - 1 ? 1 : 1 - out(cl((t - r.b + 0.25) / 0.5));
+      const prog = cl((t - r.a) / (r.b - r.a));
+      return { ...r, opacity: Math.min(fin, fo), zoom: `scale(${1 + prog * 0.06})` };
+    }).filter(s => s.opacity > 0.001);
+
+    const outP = out(cl((t - 20.2) / 0.4));
+    const trailIn = out(cl((t - 1.4) / 0.5));
+    const stops = segs.slice(1, 6).map((s, i) => {
+      const inP = cl((t - (1.4 + i * 0.15)) / 0.6);
+      const active = t >= s.a && t < s.b, visited = t >= s.b;
+      const grow = active ? 1 + 0.2 * out(cl((t - s.a) / 0.4)) : 1;
+      return { short: s.short, left: (i * 18) + "cqw",
+        fill: active || visited ? "#2456D6" : "#fff8ee", ink: active || visited ? "#fff8ee" : "#2456D6",
+        opacity: Math.min(cl(inP * 3), 1 - outP),
+        transform: `translateY(${(1 - out(inP)) * 30 + outP * 60}px) scale(${(inP ? 0.6 + 0.4 * back(inP) : 0.6) * grow})` };
+    });
+    const lP = cl((t - 20.6) / 0.6), lO = out(cl((t - 23.5) / 0.4));
+    const pct = x => (x / D * 100).toFixed(2) + "%";
+    const cues = [
+      { label: "Intro", a: -I, b: 0.1, color: "#d42a2a" },
+      { label: "Arch", a: 0, b: 0.8, color: "#2456D6" },
+      { label: "Name", a: 0.6, b: 3.6, color: "#742530" },
+      { label: "Stops", a: 3.6, b: 20.4, color: "#13296F" },
+      { label: "Trail", a: 1.4, b: 20.6, color: "#C9D6F7" },
+      { label: "Lauren", a: 20.6, b: 24, color: "#2456D6" }
+    ].map(c => ({ ...c, left: pct(c.a + I), width: pct(c.b - c.a) }));
+    const fmt = s => `0:${String(Math.floor(s)).padStart(2, "0")}`;
+    const shotList = [
+      { a: -2, b: 0, title: "Intro card", note: "“Neighborhood tour” and the Draper logo on cream." },
+      { a: 0, b: 3.6, title: "Establishing shot", note: "Street sign or long block view. The hand-lettered name appears on top." },
+      { a: 3.6, b: 7, title: "Morning coffee", note: "A café or coffee shop in the neighborhood." },
+      { a: 7, b: 10.4, title: "The park", note: "The neighborhood’s park, trail or esplanade." },
+      { a: 10.4, b: 13.8, title: "Lunch", note: "A local restaurant, patio or food truck." },
+      { a: 13.8, b: 17.2, title: "The streets", note: "Porches, trees and typical houses." },
+      { a: 17.2, b: 20.4, title: "Schools", note: "Exterior of the zoned elementary school." },
+      { a: 20.4, b: 24, title: "Lauren’s close", note: "Round clip of Lauren inviting viewers to reach out." }
+    ].map(r => ({ ...r, time: `${fmt(r.a + I)}–${fmt(r.b + I)}`, dim: (t >= r.a && t < r.b) ? 1 : 0.55 }));
+
+    return {
+      name, scriptSrc, eyebrow, words, showScript, showWords, capOpacity, capTransform, shots, stops, cues, shotList,
+      trailOpacity: Math.min(trailIn, 1 - outP),
+      laurenOpacity: Math.min(cl(lP * 3), 1 - lO),
+      laurenTransform: `translateY(${(1 - out(lP)) * 40}px) scale(${lP ? 0.6 + 0.4 * back(lP) : 0.6})`,
+      boxOpacity: bx, boxTransform: `translateY(${(1 - bx) * 80}px) scale(${0.94 + 0.06 * bx})`,
+      safe: !!this.props.showSafeZones,
+      progress: pct(T), playhead: pct(T),
+      clock: `${fmt(T)} / 0:${D}`,
+      introOpacity: 1 - out(cl((T - 1.6) / 0.5)),
+      introLogo: `scale(${0.9 + 0.1 * out(cl(T / 0.7))})`,
+      introText: out(cl((T - 0.4) / 0.5)),
+      playLabel: this.state.playing ? "Pause" : "Play",
+      toggle: () => this.setState(s => ({ playing: !s.playing })),
+      restart: () => this.setState({ t: 0, playing: true }),
+      seek: e => { const r = e.currentTarget.getBoundingClientRect(); this.setState({ t: cl((e.clientX - r.left) / r.width) * D * 0.999 }); }
+    };
+  }
+}
+</script>
+</body>
+</html>
