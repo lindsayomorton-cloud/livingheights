@@ -15,6 +15,21 @@ export const DRAPER = {
 export const HEIGHTS = ['index', 'neighborhoods', 'schools', 'food', 'events', 'news', 'history', 'guides', 'music', 'homes'];
 export const heightsRoute = (n) => (n === 'index' ? '/heights/' : `/heights/${n}/`);
 
+// Cross-site links. On Cloudflare Pages builds, Living in the Heights links from the
+// Draper pages point at its own domain, and Draper links from the Heights pages point
+// at the Draper site. Locally (and anywhere else) both stay relative.
+export const HEIGHTS_DOMAIN = 'livingintheheightstx.com';
+function pagesProjectOrigin() {
+  const u = process.env.CF_PAGES_URL; // e.g. https://3f2a1b.livingheights.pages.dev
+  if (!u) return '';
+  const host = new URL(u).hostname.split('.');
+  return 'https://' + (host.length > 3 ? host.slice(1) : host).join('.');
+}
+const onPages = !!process.env.CF_PAGES;
+export const HEIGHTS_ORIGIN = process.env.HEIGHTS_ORIGIN ?? (onPages ? `https://${HEIGHTS_DOMAIN}` : '');
+export const DRAPER_ORIGIN = process.env.DRAPER_ORIGIN ?? (onPages ? pagesProjectOrigin() : '');
+const crossHeights = (n) => (HEIGHTS_ORIGIN ? HEIGHTS_ORIGIN + (n === 'index' ? '/' : `/${n}/`) : heightsRoute(n));
+
 const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 export function rewrite(src, { heights = false } = {}) {
@@ -22,12 +37,12 @@ export function rewrite(src, { heights = false } = {}) {
   // Draper pages (raw or %20-encoded), optionally prefixed with ./ or ../
   for (const [name, { route }] of Object.entries(DRAPER)) {
     const variants = [name, name.replace(/ /g, '%20')].map(esc).join('|');
-    out = out.replace(new RegExp(`(["'(])(?:\\.\\.?/)?(?:${variants})\\.dc\\.html`, 'g'), `$1${route}`);
+    out = out.replace(new RegExp(`(["'(])(?:\\.\\.?/)?(?:${variants})\\.dc\\.html`, 'g'), `$1${heights ? DRAPER_ORIGIN : ''}${route}`);
   }
   // Living in the Heights pages (alternate -v2 explorations map to the main page)
   const hp = HEIGHTS.join('|');
   const prefix = heights ? '(?:\\./)?' : '(?:\\./)?living-in-the-heights/';
-  out = out.replace(new RegExp(`(["'(])${prefix}(${hp})(?:-v2)?\\.html`, 'g'), (_, q, n) => q + heightsRoute(n));
+  out = out.replace(new RegExp(`(["'(])${prefix}(${hp})(?:-v2)?\\.html`, 'g'), (_, q, n) => q + (heights ? heightsRoute(n) : crossHeights(n)));
   // Assets
   out = out.replace(/(["'(])(?:\.\.?\/)?img\//g, '$1/img/');
   out = out.replace(/(["'(])(?:\.\/)?living-in-the-heights\/assets\//g, '$1/heights/assets/');

@@ -41,6 +41,12 @@ npm run build    # static site in dist/
 - **Placeholder copy:** testimonials, stats and some photos are still bracketed placeholders (see `design/images-still-needed.md`).
 - **Content:** Journal, News and Events are still hard-coded in the page designs; moving them to Astro content collections is the next step for editing without code.
 
+## Domains (Cloudflare Pages)
+
+- **livingintheheightstx.com** serves Living in the Heights at its root (`/food/`, `/schools/`, ...). `functions/_middleware.js` maps that domain onto the `/heights/` pages and redirects `www.` and old `/heights/...` links.
+- Every other host (for example the `*.pages.dev` address) serves Draper Real Estate at `/`.
+- On Cloudflare builds, links between the two sites are absolute. Override with the `HEIGHTS_ORIGIN` and `DRAPER_ORIGIN` build variables (for example once Draper has its own domain).
+
 ## Deploy
 
 Netlify, Vercel or Cloudflare Pages: build command `npm run build`, output directory `dist`.
