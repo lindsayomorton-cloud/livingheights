@@ -28,7 +28,7 @@
         <img src="img/bonnet-b.webp" alt="" aria-hidden="true" style="position:absolute;right:-3cqw;top:80cqw;width:22cqw;max-width:none;height:auto;transform:scaleX(-1);opacity:.95">
         <img src="img/skyline-strip-red.png" alt="" aria-hidden="true" style="position:absolute;left:8cqw;bottom:-1cqw;width:84cqw;max-width:none;height:auto;opacity:.2">
         <span style="position:absolute;left:0;right:0;bottom:27cqw;text-align:center;font-size:2.8cqw;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:#2456D6">The Heights · Houston, TX</span>
-        <div style="position:absolute;left:50%;bottom:33cqw;transform:translateX(-50%);z-index:3;line-height:0"><img src="img/draper-logo.png" alt="Draper Real Estate" style="width:46cqw;max-width:none;height:auto"></div>
+        <div style="position:absolute;left:50%;bottom:33cqw;transform:translateX(-50%);z-index:3;line-height:0"><img src="img/draper-logo.webp" alt="Draper Real Estate" style="width:46cqw;max-width:none;height:auto"></div>
 
         <div style="position:absolute;left:0;right:0;top:5cqw;height:24cqw;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:2.2cqw;padding:0 8cqw;text-align:center;opacity:{{ capOpacity }};transform:{{ capTransform }}">
           <span style="font-size:3cqw;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:#2456D6">{{ eyebrow }}</span>
@@ -68,7 +68,7 @@
 
         <div aria-hidden="true" style="position:absolute;inset:0;z-index:6;pointer-events:none;background:#fff8ee;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5cqw;opacity:{{ introOpacity }}">
           <span style="font-size:3.6cqw;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:#2456D6;opacity:{{ introText }}">Neighborhood tour</span>
-          <img src="img/draper-logo.png" alt="" style="width:74cqw;max-width:none;height:auto;transform:{{ introLogo }}">
+          <img src="img/draper-logo.webp" alt="" style="width:74cqw;max-width:none;height:auto;transform:{{ introLogo }}">
           <img src="img/illo-bluebonnets.png" alt="" style="position:absolute;left:-4cqw;bottom:-12cqw;width:108cqw;max-width:none;height:auto">
         </div>
         <sc-if value="{{ safe }}" hint-placeholder-val="{{ false }}">
@@ -167,7 +167,7 @@ class Component extends DCLogic {
     const cl = x => Math.max(0, Math.min(1, x));
     const out = x => 1 - Math.pow(1 - x, 3);
     const back = x => { const c = 1.7; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
-    const SCRIPTS = { "Houston Heights": "img/script-houston-heights.png", "Norhill": "img/script-norhill.png", "Timbergrove": "img/script-timbergrove.png", "Lazybrook": "img/script-lazybrook.png", "Montie Beach": "img/script-montie-beach.png" };
+    const SCRIPTS = { "Houston Heights": "img/script-houston-heights.png", "Norhill": "img/script-norhill.png", "Timbergrove": "img/script-timbergrove.webp", "Lazybrook": "img/script-lazybrook.webp", "Montie Beach": "img/script-montie-beach.png" };
     const name = this.props.neighborhood ?? "Houston Heights";
     const scriptSrc = SCRIPTS[name] || SCRIPTS["Houston Heights"];
 
