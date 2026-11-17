@@ -17,17 +17,12 @@ export const heightsRoute = (n) => (n === 'index' ? '/heights/' : `/heights/${n}
 
 // Cross-site links. On Cloudflare Pages builds, Living in the Heights links from the
 // Draper pages point at its own domain, and Draper links from the Heights pages point
-// at the Draper site. Locally (and anywhere else) both stay relative.
+// at theheightshouston.com. Locally (and anywhere else) both stay relative.
 export const HEIGHTS_DOMAIN = 'livingintheheightstx.com';
-function pagesProjectOrigin() {
-  const u = process.env.CF_PAGES_URL; // e.g. https://3f2a1b.livingheights.pages.dev
-  if (!u) return '';
-  const host = new URL(u).hostname.split('.');
-  return 'https://' + (host.length > 3 ? host.slice(1) : host).join('.');
-}
+export const DRAPER_DOMAIN = 'theheightshouston.com';
 const onPages = !!process.env.CF_PAGES;
 export const HEIGHTS_ORIGIN = process.env.HEIGHTS_ORIGIN ?? (onPages ? `https://${HEIGHTS_DOMAIN}` : '');
-export const DRAPER_ORIGIN = process.env.DRAPER_ORIGIN ?? (onPages ? pagesProjectOrigin() : '');
+export const DRAPER_ORIGIN = process.env.DRAPER_ORIGIN ?? (onPages ? `https://${DRAPER_DOMAIN}` : '');
 const crossHeights = (n) => (HEIGHTS_ORIGIN ? HEIGHTS_ORIGIN + (n === 'index' ? '/' : `/${n}/`) : heightsRoute(n));
 
 const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');

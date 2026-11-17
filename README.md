@@ -44,8 +44,9 @@ npm run build    # static site in dist/
 ## Domains (Cloudflare Pages)
 
 - **livingintheheightstx.com** serves Living in the Heights at its root (`/food/`, `/schools/`, ...). `functions/_middleware.js` maps that domain onto the `/heights/` pages and redirects `www.` and old `/heights/...` links.
-- Every other host (for example the `*.pages.dev` address) serves Draper Real Estate at `/`.
-- On Cloudflare builds, links between the two sites are absolute. Override with the `HEIGHTS_ORIGIN` and `DRAPER_ORIGIN` build variables (for example once Draper has its own domain).
+- **theheightshouston.com** serves Draper Real Estate. Its `/heights/...` pages redirect to livingintheheightstx.com, and `www.` redirects to the bare domain.
+- Any other host (for example the `*.pages.dev` preview address) serves the build as-is: Draper at `/`, Heights at `/heights/`.
+- On Cloudflare builds, links between the two sites are absolute. Override with the `HEIGHTS_ORIGIN` and `DRAPER_ORIGIN` build variables (for example to test on a preview address).
 
 ## Deploy
 
