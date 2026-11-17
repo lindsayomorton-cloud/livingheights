@@ -1,0 +1,8 @@
+---
+import Layout from '../../layouts/DraperLayout.astro';
+import Page from '../../generated/draper/vertical-video.jsx';
+import data from '../../generated/draper/vertical-video.json';
+---
+<Layout title="Vertical Video Style · Draper Real Estate" head={data.head} noindex>
+  <Page client:load />
+</Layout>

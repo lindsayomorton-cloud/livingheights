@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/DraperLayout.astro';
+import Page from '../generated/draper/buy.jsx';
+import data from '../generated/draper/buy.json';
+---
+<Layout title="Buy a Home · Draper Real Estate" head={data.head}>
+  <Page client:load />
+</Layout>

@@ -1,0 +1,8 @@
+---
+import Layout from '../../layouts/DraperLayout.astro';
+import Page from '../../generated/draper/journal.jsx';
+import data from '../../generated/draper/journal.json';
+---
+<Layout title="Journal · Draper Real Estate" head={data.head}>
+  <Page client:load />
+</Layout>

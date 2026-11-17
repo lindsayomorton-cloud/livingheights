@@ -1,0 +1,8 @@
+---
+import Layout from '../../layouts/DraperLayout.astro';
+import Page from '../../generated/draper/neighborhood-tour.jsx';
+import data from '../../generated/draper/neighborhood-tour.json';
+---
+<Layout title="Neighborhood Tour Template · Draper Real Estate" head={data.head} noindex>
+  <Page client:load />
+</Layout>

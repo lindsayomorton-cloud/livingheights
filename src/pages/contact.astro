@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/DraperLayout.astro';
+import Page from '../generated/draper/contact.jsx';
+import data from '../generated/draper/contact.json';
+---
+<Layout title="Contact · Draper Real Estate" head={data.head}>
+  <Page client:load />
+</Layout>

@@ -1,0 +1,8 @@
+---
+import Layout from '../../layouts/DraperLayout.astro';
+import Page from '../../generated/draper/video-templates.jsx';
+import data from '../../generated/draper/video-templates.json';
+---
+<Layout title="Video Templates · Draper Real Estate" head={data.head} noindex>
+  <Page client:load />
+</Layout>

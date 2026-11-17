@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/DraperLayout.astro';
+import Page from '../generated/draper/home.jsx';
+import data from '../generated/draper/home.json';
+---
+<Layout title="Draper Real Estate · Homes in the Houston Heights" head={data.head}>
+  <Page client:load />
+</Layout>

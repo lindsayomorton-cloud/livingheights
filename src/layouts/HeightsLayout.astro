@@ -1,0 +1,17 @@
+---
+interface Props { page: { title: string; viewport: string; head: string; bodyAttrs: Record<string, string>; body: string } }
+const { page } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content={page.viewport} />
+    <title set:html={page.title} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <Fragment set:html={page.head} />
+  </head>
+  <body {...page.bodyAttrs}>
+    <Fragment set:html={page.body} />
+  </body>
+</html>
