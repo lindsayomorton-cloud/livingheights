@@ -4,7 +4,7 @@
 // Other hosts (e.g. the *.pages.dev preview address) get the build as-is.
 const HEIGHTS_HOST = 'livingintheheightstx.com';
 const DRAPER_HOST = 'theheightshouston.com';
-const SHARED = ['/_astro/', '/img/', '/ds/', '/heights/assets/', '/favicon.svg'];
+const SHARED = ['/_astro/', '/img/', '/ds/', '/heights/assets/', '/favicon.svg', '/icons/'];
 const isHeightsPage = (p) => (p === '/heights' || p.startsWith('/heights/')) && !p.startsWith('/heights/assets/');
 const stripHeights = (p) => p.slice('/heights'.length) || '/';
 

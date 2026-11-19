@@ -8,7 +8,9 @@ const { page } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content={page.viewport} />
     <title set:html={page.title} />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/icons/heights/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/heights/favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="/icons/heights/apple-touch-icon.png" />
     <Fragment set:html={page.head} />
   </head>
   <body {...page.bodyAttrs}>
